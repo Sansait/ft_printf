@@ -80,7 +80,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/sklepper/Dev/ft_printf/ft_printf.h">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/sklepper/Dev/ft_printf/int.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/sklepper/Dev/ft_printf/libft/srcs/ft_printuntil.c">
+			<Option target="ft_printf"/>
+		</Unit>
 		<Unit filename="/Users/sklepper/Dev/ft_printf/main.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/sklepper/Dev/ft_printf/path.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/sklepper/Dev/ft_printf/string.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/sklepper/Dev/ft_printf/void.c">
 			<Option target="ft_printf"/>
 		</Unit>
 		<Unit filename="/Users/sklepper/Dev/ft_printf/CMakeLists.txt">

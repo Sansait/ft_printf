@@ -123,6 +123,60 @@ ft_printf/fast:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/build
 .PHONY : ft_printf/fast
 
+int.o: int.c.o
+
+.PHONY : int.o
+
+# target to build an object file
+int.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/int.c.o
+.PHONY : int.c.o
+
+int.i: int.c.i
+
+.PHONY : int.i
+
+# target to preprocess a source file
+int.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/int.c.i
+.PHONY : int.c.i
+
+int.s: int.c.s
+
+.PHONY : int.s
+
+# target to generate assembly for a file
+int.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/int.c.s
+.PHONY : int.c.s
+
+libft/srcs/ft_printuntil.o: libft/srcs/ft_printuntil.c.o
+
+.PHONY : libft/srcs/ft_printuntil.o
+
+# target to build an object file
+libft/srcs/ft_printuntil.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/libft/srcs/ft_printuntil.c.o
+.PHONY : libft/srcs/ft_printuntil.c.o
+
+libft/srcs/ft_printuntil.i: libft/srcs/ft_printuntil.c.i
+
+.PHONY : libft/srcs/ft_printuntil.i
+
+# target to preprocess a source file
+libft/srcs/ft_printuntil.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/libft/srcs/ft_printuntil.c.i
+.PHONY : libft/srcs/ft_printuntil.c.i
+
+libft/srcs/ft_printuntil.s: libft/srcs/ft_printuntil.c.s
+
+.PHONY : libft/srcs/ft_printuntil.s
+
+# target to generate assembly for a file
+libft/srcs/ft_printuntil.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/libft/srcs/ft_printuntil.c.s
+.PHONY : libft/srcs/ft_printuntil.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -150,6 +204,87 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/main.c.s
 .PHONY : main.c.s
 
+path.o: path.c.o
+
+.PHONY : path.o
+
+# target to build an object file
+path.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/path.c.o
+.PHONY : path.c.o
+
+path.i: path.c.i
+
+.PHONY : path.i
+
+# target to preprocess a source file
+path.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/path.c.i
+.PHONY : path.c.i
+
+path.s: path.c.s
+
+.PHONY : path.s
+
+# target to generate assembly for a file
+path.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/path.c.s
+.PHONY : path.c.s
+
+string.o: string.c.o
+
+.PHONY : string.o
+
+# target to build an object file
+string.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/string.c.o
+.PHONY : string.c.o
+
+string.i: string.c.i
+
+.PHONY : string.i
+
+# target to preprocess a source file
+string.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/string.c.i
+.PHONY : string.c.i
+
+string.s: string.c.s
+
+.PHONY : string.s
+
+# target to generate assembly for a file
+string.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/string.c.s
+.PHONY : string.c.s
+
+void.o: void.c.o
+
+.PHONY : void.o
+
+# target to build an object file
+void.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/void.c.o
+.PHONY : void.c.o
+
+void.i: void.c.i
+
+.PHONY : void.i
+
+# target to preprocess a source file
+void.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/void.c.i
+.PHONY : void.c.i
+
+void.s: void.c.s
+
+.PHONY : void.s
+
+# target to generate assembly for a file
+void.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/void.c.s
+.PHONY : void.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ft_printf"
+	@echo "... int.o"
+	@echo "... int.i"
+	@echo "... int.s"
+	@echo "... libft/srcs/ft_printuntil.o"
+	@echo "... libft/srcs/ft_printuntil.i"
+	@echo "... libft/srcs/ft_printuntil.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... path.o"
+	@echo "... path.i"
+	@echo "... path.s"
+	@echo "... string.o"
+	@echo "... string.i"
+	@echo "... string.s"
+	@echo "... void.o"
+	@echo "... void.i"
+	@echo "... void.s"
 .PHONY : help
 
 

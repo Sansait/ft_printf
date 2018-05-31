@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   int.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/05/31 17:13:25 by sklepper         ###   ########.fr       */
+/*   Created: 2018/05/31 16:57:05 by sklepper          #+#    #+#             */
+/*   Updated: 2018/05/31 17:06:24 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-int	 ft_printf(const char *str, ...)
+int		int_param(const char *ptr, va_list param, int i)
 {
-	va_list		pointerlst;
-	char 		*ptr;
-	int			i;
+	int n;
 
-	va_start(pointerlst, str);
-	i = 0;
-	while ((ptr = ft_strchr(str, '%')) != NULL)
-	{
-		i++;
-		ft_printuntil(str, ptr) + 1;
-		ptr += 1;
-		conversion(ptr, pointerlst, i);
-		str = ptr + 1;
-	}
-	ft_printuntil(str, ptr);
-	va_end(pointerlst);
+	n = va_arg(param, int);
+	ft_putnbr(n);
 	return (0);
 }
 
-int main(void)
+int		unsignedint_param(const char *ptr, va_list param)
 {
-	ft_printf("salut les zickos %d %i %d %s ca va ", 1, 2, 3, "123");
+	unsigned int n;
+
+	n = va_arg(param, unsigned int);
+	ft_putnbr(n);
 	return (0);
 }
