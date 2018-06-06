@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/sklepper/Dev/ft_printf
+CMAKE_SOURCE_DIR = /Users/jlehideu/Documents/ft_printf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/sklepper/Dev/ft_printf/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/jlehideu/Documents/ft_printf/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sklepper/Dev/ft_printf/cmake-build-debug/CMakeFiles /Users/sklepper/Dev/ft_printf/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jlehideu/Documents/ft_printf/cmake-build-debug/CMakeFiles /Users/jlehideu/Documents/ft_printf/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sklepper/Dev/ft_printf/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jlehideu/Documents/ft_printf/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ ft_printf/fast:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/build
 .PHONY : ft_printf/fast
 
+flags.o: flags.c.o
+
+.PHONY : flags.o
+
+# target to build an object file
+flags.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/flags.c.o
+.PHONY : flags.c.o
+
+flags.i: flags.c.i
+
+.PHONY : flags.i
+
+# target to preprocess a source file
+flags.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/flags.c.i
+.PHONY : flags.c.i
+
+flags.s: flags.c.s
+
+.PHONY : flags.s
+
+# target to generate assembly for a file
+flags.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/flags.c.s
+.PHONY : flags.c.s
+
 int.o: int.c.o
 
 .PHONY : int.o
@@ -149,6 +176,33 @@ int.s: int.c.s
 int.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/int.c.s
 .PHONY : int.c.s
+
+length.o: length.c.o
+
+.PHONY : length.o
+
+# target to build an object file
+length.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/length.c.o
+.PHONY : length.c.o
+
+length.i: length.c.i
+
+.PHONY : length.i
+
+# target to preprocess a source file
+length.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/length.c.i
+.PHONY : length.c.i
+
+length.s: length.c.s
+
+.PHONY : length.s
+
+# target to generate assembly for a file
+length.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/length.c.s
+.PHONY : length.c.s
 
 libft/srcs/ft_printuntil.o: libft/srcs/ft_printuntil.c.o
 
@@ -231,6 +285,33 @@ path.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/path.c.s
 .PHONY : path.c.s
 
+precision.o: precision.c.o
+
+.PHONY : precision.o
+
+# target to build an object file
+precision.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/precision.c.o
+.PHONY : precision.c.o
+
+precision.i: precision.c.i
+
+.PHONY : precision.i
+
+# target to preprocess a source file
+precision.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/precision.c.i
+.PHONY : precision.c.i
+
+precision.s: precision.c.s
+
+.PHONY : precision.s
+
+# target to generate assembly for a file
+precision.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/precision.c.s
+.PHONY : precision.c.s
+
 string.o: string.c.o
 
 .PHONY : string.o
@@ -294,9 +375,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ft_printf"
+	@echo "... flags.o"
+	@echo "... flags.i"
+	@echo "... flags.s"
 	@echo "... int.o"
 	@echo "... int.i"
 	@echo "... int.s"
+	@echo "... length.o"
+	@echo "... length.i"
+	@echo "... length.s"
 	@echo "... libft/srcs/ft_printuntil.o"
 	@echo "... libft/srcs/ft_printuntil.i"
 	@echo "... libft/srcs/ft_printuntil.s"
@@ -306,6 +393,9 @@ help:
 	@echo "... path.o"
 	@echo "... path.i"
 	@echo "... path.s"
+	@echo "... precision.o"
+	@echo "... precision.i"
+	@echo "... precision.s"
 	@echo "... string.o"
 	@echo "... string.i"
 	@echo "... string.s"

@@ -5,6 +5,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_printf.dir/int.c.o"
   "CMakeFiles/ft_printf.dir/string.c.o"
   "CMakeFiles/ft_printf.dir/void.c.o"
+  "CMakeFiles/ft_printf.dir/flags.c.o"
+  "CMakeFiles/ft_printf.dir/length.c.o"
+  "CMakeFiles/ft_printf.dir/precision.c.o"
   "ft_printf.pdb"
   "ft_printf"
 )
