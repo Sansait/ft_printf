@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/06 15:34:35 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/06 15:39:15 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int		length(const char *ptr, t_data *data)
 	else if (*ptr == 'l')
 		return (length_l(ptr, data));
 	else if (*ptr == 'j')
-		return (length_j(ptr, data));
+		return (length_j(data));
 	else if (*ptr == 'z')
-		return (length_z(ptr, data));
+		return (length_z(data));
 	return (0);
 }
 
