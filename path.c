@@ -6,11 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/05/31 18:38:14 by sklepper         ###   ########.fr       */
-.fr       */
-=======
-/*   Updated: 2018/05/31 18:21:29 by sklepper         ###   ########.fr       */
->>>>>>> 8794c8696c0e62dc79cb42be1ccf32d63a4a3313
+/*   Updated: 2018/06/06 13:34:27 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +17,19 @@ void	path(char *ptr, va_list arg, int i)
 
 }
 
-void	flags(const char *ptr, ...)
+int		flags(const char *ptr, t_data *data, ...)
 {
 	if (*ptr == '#')
-	{}
+		return (flag_sharp(data));
 	else if (*ptr == '0')
-	{}
+		return (flag_zero(data));
 	else if (*ptr == '-')
-	{}
+		return (flag_minus(data));
 	else if (*ptr == '+')
-	{}
+		return (flag_plus(data));
 	else if (*ptr == ' ')
-	{}
+		return (flag_space(data));
+	return (0);
 }
 
 void	length(const char *ptr, ...)
