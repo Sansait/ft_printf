@@ -14,6 +14,7 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
+//test
 int	 ft_printf(const char *str, ...)
 {
 	va_list		pointerlst;
