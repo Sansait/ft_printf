@@ -6,61 +6,75 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/05/31 18:21:29 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/06 15:34:35 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	path(char *ptr, va_list arg, int i)
+int		path(char *ptr, va_list param, t_data *data)
 {
+	int i;
 
+	i = 0;
+	if ((i = flags(ptr, data)) > 0)
+		return (i);
+	else if ((i = length(ptr, data)) > 0)
+		return (i);
+	else if ((i = width(ptr, data)) > 0)
+		return (i);
+	else if (*ptr == '%')
+		ft_putchar('%');
+	else
+		conversion(ptr, param, data);
+	return (0);
 }
 
-void	flags(const char *ptr, ...)
+int		width(char *ptr, t_data *data)
+{
+	if (*ptr == '.')
+		return (precision(ptr + 1, data) + 1);
+	else if (*ptr > '0' && *ptr <= '9')
+		return (width_min(ptr, data));
+	return (0);
+}
+
+int		flags(const char *ptr, t_data *data)
 {
 	if (*ptr == '#')
-	{}
+		return (flag_sharp(data));
 	else if (*ptr == '0')
-	{}
+		return (flag_zero(data));
 	else if (*ptr == '-')
-	{}
+		return (flag_minus(data));
 	else if (*ptr == '+')
-	{}
+		return (flag_plus(data));
 	else if (*ptr == ' ')
-	{}
+		return (flag_space(data));
+	return (0);
 }
 
-void	length(const char *ptr, ...)
+int		length(const char *ptr, t_data *data)
 {
 	if (*ptr == 'h')
-	{
-		if (*(ptr + 1) == 'h')
-		{}
-		else
-		{}
-	}
+		return (length_h(ptr, data));
 	else if (*ptr == 'l')
-	{
-		if (*(ptr + 1) == 'l')
-		{}
-		else
-		{}
-	}
+		return (length_l(ptr, data));
 	else if (*ptr == 'j')
-	{}
+		return (length_j(ptr, data));
 	else if (*ptr == 'z')
-	{}
+		return (length_z(ptr, data));
+	return (0);
 }
 
-int		conversion(const char *ptr, va_list param, int i)
+int		conversion(const char *ptr, va_list param, t_data *data)
 {
 	if (*ptr == 's' || *ptr == 'S')
 		string_param(ptr, param);
 	else if (*ptr == 'p')
 		void_param(ptr, param);
 	else if (*ptr == 'd' || *ptr == 'i' || *ptr == 'D')
-		int_param(ptr, param, i);
+		int_param(ptr, param);
 	else if (*ptr == 'o' || *ptr == 'O')
 		unsignedint_param_oct(ptr, param);
 	else if (*ptr == 'u' || *ptr == 'U')
@@ -71,4 +85,5 @@ int		conversion(const char *ptr, va_list param, int i)
 		unsignedint_param_hexm(ptr, param);
 	else if (*ptr == 'c' || *ptr == 'C')
 		unsignedint_param_hexm(ptr, param);
+	return (0);
 }
