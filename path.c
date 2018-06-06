@@ -71,8 +71,8 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 {
 	if (*ptr == 's' || *ptr == 'S')
 		string_param(ptr, param);
-	else if (*ptr == 'p')
-		void_param(ptr, param);
+//	else if (*ptr == 'p')
+//		void_param(ptr, param);
 	else if (*ptr == 'd' || *ptr == 'i' || *ptr == 'D')
 		int_param(ptr, param);
 	else if (*ptr == 'o' || *ptr == 'O')
@@ -82,8 +82,8 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 	else if (*ptr == 'x')
 		unsignedint_param_hex(ptr, param);
 	else if (*ptr == 'X')
-		unsignedint_param_hexm(ptr, param);
+		unsignedint_param_hexc(ptr, param);
 	else if (*ptr == 'c' || *ptr == 'C')
-		unsignedint_param_hexm(ptr, param);
+		unsignedint_param_hexc(ptr, param);
 	return (0);
 }

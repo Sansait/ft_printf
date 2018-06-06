@@ -49,6 +49,6 @@ int main(int ac, char **av)
 		return (0);
 	}
 	nb = ft_atoi(av[1]);
-	printf("ta race\n", to_base(nb, av[2]));
+//	printf("ta race\n", to_base(nb, av[2]));
 	return (0);
 }

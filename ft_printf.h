@@ -26,6 +26,10 @@
 # define J 2
 # define Z 3
 
+# define BASE_O "01234567"
+# define BASE_HC "0123456789ABCDEF"
+# define BASE_H "0123456789abcdef"
+
 struct s_data
 {
 	int		flags[5];
@@ -44,7 +48,7 @@ int		void_param(const char *ptr, va_list param);
 int		unsignedint_param_oct(const char *ptr, va_list param);
 int		unsignedint_param(const char *ptr, va_list param);
 int		unsignedint_param_hex(const char *ptr, va_list param);
-int		unsignedint_param_hexm(const char *ptr, va_list param);
+int		unsignedint_param_hexc(const char *ptr, va_list param);
 int		flags(const char *ptr, t_data *data);
 int		flag_sharp(t_data *data);
 int		flag_zero(t_data *data);
@@ -59,6 +63,7 @@ int		length_z(t_data *data);
 int		width(char *ptr, t_data *data);
 int		precision(char *ptr, t_data *data);
 int		width_min(char *ptr, t_data *data);
+char	*to_base(int nb, char *base);
 
 
 #endif
