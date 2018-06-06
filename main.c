@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/06 15:57:48 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/06 17:44:00 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@ int	 ft_printf(const char *str, ...)
 	va_list		pointerlst;
 	char 		*ptr;
 	int			i;
+	t_data		data;
 
 	va_start(pointerlst, str);
 	i = 0;
 	while ((ptr = ft_strchr(str, '%')) != NULL)
 	{
-		i++;
-		ft_printuntil(str, ptr) + 1;
+		ft_printuntil(str, ptr);
 		ptr += 1;
-		conversion(ptr, pointerlst, i);
+		while ((i = path(ptr, pointerlst, &data)) > 0)
+			ptr += i;
 		str = ptr + 1;
 	}
 	ft_printuntil(str, ptr);
