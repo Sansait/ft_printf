@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/06 15:51:02 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/06 15:57:48 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	 ft_printf(const char *str, ...)
 	va_end(pointerlst);
 	return (0);
 }
+
 
 int main(int ac, char **av)
 {
