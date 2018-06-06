@@ -12,7 +12,7 @@
 
 
 #include "ft_printf.h"
-
+//test
 int	 ft_printf(const char *str, ...)
 {
 	va_list		pointerlst;
