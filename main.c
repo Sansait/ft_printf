@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/06 15:31:14 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/06 15:39:15 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ int	 ft_printf(const char *str, ...)
 	{
 		ft_printuntil(str, ptr);
 		ptr += 1;
-		i = conversion(ptr, pointerlst, &data);
-		str = ptr + i;
+		while ((i = path(ptr, pointerlst, &data)) > 0)
+			ptr += i;
+		str = ptr + 1;
 	}
 	ft_printuntil(str, ptr);
 	va_end(pointerlst);
@@ -38,6 +39,6 @@ int	 ft_printf(const char *str, ...)
 
 int main(void)
 {
-	ft_printf("salut les zickos %d %i %d %s ca va ", 1, 2, 3, "123");
+	ft_printf("salut les zickos %#.12d %i %d %s ca va ", 1, 2, 3, "123");
 	return (0);
 }

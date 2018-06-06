@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/06 15:20:26 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/06 15:34:35 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ int		path(char *ptr, va_list param, t_data *data)
 		return (i);
 	else if ((i = width(ptr, data)) > 0)
 		return (i);
-	else if ((i = conversion(ptr, param, data)) > 0)
-		return (i);
+	else if (*ptr == '%')
+		ft_putchar('%');
+	else
+		conversion(ptr, param, data);
+	return (0);
 }
 
 int		width(char *ptr, t_data *data)
@@ -82,4 +85,5 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 		unsignedint_param_hexm(ptr, param);
 	else if (*ptr == 'c' || *ptr == 'C')
 		unsignedint_param_hexm(ptr, param);
+	return (0);
 }

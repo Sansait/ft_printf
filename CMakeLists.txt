@@ -3,5 +3,5 @@ project(ft_printf C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(ft_printf main.c ft_printf.h libft/srcs/ft_printuntil.c path.c int.c string.c void.c)
+add_executable(ft_printf main.c ft_printf.h libft/srcs/ft_printuntil.c path.c int.c string.c void.c flags.c length.c precision.c)
 target_link_libraries(ft_printf "~/dev/ft_printf/libft/libft.a")
