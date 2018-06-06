@@ -1,4 +1,8 @@
-//
-// Created by Samuel KLEPPER on 6/6/18.
-//
+#include <stdio.h>
+#include <stdlib.h>
 
+int	main(int argc, char **av)
+{
+	printf("%2x", (atoi(av[1])));
+	return (argc);
+}
