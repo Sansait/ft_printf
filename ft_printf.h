@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 15:21:52 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/07 12:40:40 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/07 16:59:03 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ int				unsignedint_param(const char *ptr, va_list param);
 int				unsignedint_param_hex(const char *ptr, va_list param);
 int				unsignedint_param_hexc(const char *ptr, va_list param);
 int				flags(const char *ptr, t_data *data);
-int				flag_sharp(t_data *data);
-int				flag_zero(t_data *data);
-int				flag_minus(t_data *data);
-int				flag_plus(t_data *data);
-int				flag_space(t_data *data);
+int				flag_sharp(const char *ptr, t_data *data);
+int				flag_zero(const char *ptr, t_data *data);
+int				flag_minus(const char *ptr, t_data *data);
+int				flag_plus(const char *ptr, t_data *data);
+int				flag_space(const char *ptr, t_data *data);
 int				length(const char *ptr, t_data *data);
 int				length_h(const char *ptr, t_data *data);
 int				length_l(const char *ptr, t_data *data);
@@ -66,6 +66,7 @@ int						width_min(char *ptr, t_data *data);
 char					*to_base(int nb, char *base);//to_base
 int				pick_f_u(va_list param, t_data *data);//pick_f_u_int.c
 void			ft_put_u(unsigned int nb);//pick_f_u_int.c
+size_t			len_u(unsigned int nb);
 
 
 #endif

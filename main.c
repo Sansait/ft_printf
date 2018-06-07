@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/07 12:42:42 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/07 16:58:25 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,12 @@ int main(int ac, char **av)
 	int				nb;
 	unsigned int	u_nb;
 
-	if (ac < 2)
-	{
-		printf("veuillez entrer un parametre");
-		return (0);
-	}
-	u_nb = -1; 
-	ft_putstr("put_u_nbr ->");
-	ft_put_u(u_nb);
-	printf("\nprintf ->%u\n", u_nb);
+	u_nb = 98765; 
+	ft_printf("ft ->%u\n", u_nb);
+	printf("print ->%u\n\n", u_nb);
+	ft_printf("ft- ->%-u\n", u_nb);
+	printf("print- ->%-u\n\n", u_nb);
+	ft_printf("ft-12 ->%-12u\n", u_nb);
+	printf("print ->%-12u\n\n", u_nb);
 	return (0);
 }
