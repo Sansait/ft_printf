@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/07 17:12:18 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/07 15:35:19 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-int	init_struct(t_data	*data)
+void	init_struct(t_data *data)
 {
-	int	i;
+	int i;
 
+	data->precision = 0;
+	data->width = 0;
 	i = -1;
-	while (++i < 4)
+	while (++i <= 4)
 		data->flags[i] = 0;
 	i = -1;
-	while (++i < 3)
+	while (++i <= 3)
 		data->length[i] = 0;
 }
 
@@ -34,9 +36,9 @@ int	 ft_printf(const char *str, ...)
 	t_data		data;
 
 	va_start(pointerlst, str);
-	i = 0;
 	while ((ptr = ft_strchr(str, '%')) != NULL)
 	{
+		init_struct(&data);
 		ft_printuntil(str, ptr);
 		ptr += 1;
 		init_struct(&data);
@@ -50,10 +52,9 @@ int	 ft_printf(const char *str, ...)
 }
 
 
-int main(int ac, char **av)
+int main(void)
 {
 	int				nb;
-	unsigned int	u_nb;
 
 	u_nb = 98765; 
 	ft_printf("ft ->%-u\n", u_nb);
