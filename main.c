@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/07 12:05:23 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/07 12:42:42 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,9 @@ int main(int ac, char **av)
 		printf("veuillez entrer un parametre");
 		return (0);
 	}
-	nb = ft_atoi(av[1]);
-	u_nb = int_to_u();
-	printf("put_u_nbr ->");
-	ft_put_u_nbr(nb);
-	printf("\nprintf ->%u\n", nb);
+	u_nb = -1; 
+	ft_putstr("put_u_nbr ->");
+	ft_put_u(u_nb);
+	printf("\nprintf ->%u\n", u_nb);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 15:21:52 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/07 12:06:05 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/07 12:40:40 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,8 @@ int						width(char *ptr, t_data *data);
 int						precision(char *ptr, t_data *data);
 int						width_min(char *ptr, t_data *data);
 char					*to_base(int nb, char *base);//to_base
-static int				pick_f_u(t_data *data);//pick_f_u_int.c
-static unsigned int		int_to_u(int nb);//pick_f_u_int.c
-static void				ft_put_u(unsigned int nb);//pick_f_u_int.c
+int				pick_f_u(va_list param, t_data *data);//pick_f_u_int.c
+void			ft_put_u(unsigned int nb);//pick_f_u_int.c
 
 
 #endif
