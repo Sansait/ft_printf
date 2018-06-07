@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/06 17:44:00 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/07 12:05:23 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-//test
 int	 ft_printf(const char *str, ...)
 {
 	va_list		pointerlst;
@@ -40,8 +39,8 @@ int	 ft_printf(const char *str, ...)
 
 int main(int ac, char **av)
 {
-	//ft_printf("salut les zickos %d %i %d %s ca va ", 1, 2, 3, "123");
-	int nb;
+	int				nb;
+	unsigned int	u_nb;
 
 	if (ac < 2)
 	{
@@ -49,6 +48,9 @@ int main(int ac, char **av)
 		return (0);
 	}
 	nb = ft_atoi(av[1]);
-//	printf("ta race\n", to_base(nb, av[2]));
+	u_nb = int_to_u();
+	printf("put_u_nbr ->");
+	ft_put_u_nbr(nb);
+	printf("\nprintf ->%u\n", nb);
 	return (0);
 }

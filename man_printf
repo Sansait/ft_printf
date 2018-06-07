@@ -52,7 +52,7 @@ S -> synonyme de ls
 	pour les bonus, rechecker cette regle
 
 - ->  rejoute des espaces a la fin
-	prevaut sur la precision
+	prevaut sur la taille minimmum (width)
 
 + -> il doit toujours y avoir un signe avant le nombre pour les convertions signées
 
@@ -70,11 +70,11 @@ precision .[nombre] -> donne le nombre minimum de chiffre a afficher pour d, i, 
 taille minimum -> si la valeur convertie a moins de caracteres que la taille minimum, on ajoute des espaces a gauche
 	LEFT ADJUSTMENT FLAG -> les espaces sont ajoutés a droite (cas que lon ne gere pas je crois )
 
-
+pour les chiffres si on a une precision et une traille min (width) on commence par ajouter les 0 et width = width - (convertion + precision)
 
 
 -- LES FLAGS lettres sataniques --
-aussi appeles modificateurs de longueur 
+aussi appeles modificateurs de longueur  //et si on gearit ces couilles des le depart ?
 
 Modifier          d, i           o, u, x, X            n
 hh                signed char    unsigned char         signed char *
