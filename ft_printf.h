@@ -63,7 +63,8 @@ int		length_z(t_data *data);
 int		width(char *ptr, t_data *data);
 int		precision(char *ptr, t_data *data);
 int		width_min(char *ptr, t_data *data);
-char	*to_base(int nb, char *base);
+char		*to_base(int nb, char *base);//to_base
+int		pick_unsigned_int_func(t_data *data);
 
 
 #endif
