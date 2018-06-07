@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/07 11:38:11 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/07 17:08:34 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int		width(char *ptr, t_data *data)
 		return (precision(ptr + 1, data) + 1);
 	else if (*ptr > '0' && *ptr <= '9')
 		return (width_min(ptr, data));
+	data->width = 0;
+	data->precision= 0;
 	return (0);
 }
 
@@ -71,14 +73,14 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 {
 	if (*ptr == 's' || *ptr == 'S')
 		string_param(ptr, param);
-//	else if (*ptr == 'p')
-//		void_param(ptr, param);
+	//	else if (*ptr == 'p')
+	//		void_param(ptr, param);
 	else if (*ptr == 'd' || *ptr == 'i' || *ptr == 'D')
 		int_param(ptr, param);
 	else if (*ptr == 'o' || *ptr == 'O')
 		unsignedint_param_oct(ptr, param);
 	else if (*ptr == 'u' || *ptr == 'U')
-		unsignedint_param(ptr, param);
+		pick_f_u(param, data);
 	else if (*ptr == 'x')
 		unsignedint_param_hex(ptr, param);
 	else if (*ptr == 'X')

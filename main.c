@@ -41,6 +41,7 @@ int	 ft_printf(const char *str, ...)
 		init_struct(&data);
 		ft_printuntil(str, ptr);
 		ptr += 1;
+		init_struct(&data);
 		while ((i = path(ptr, pointerlst, &data)) > 0)
 			ptr += i;
 		str = ptr + 1;
@@ -54,13 +55,13 @@ int	 ft_printf(const char *str, ...)
 int main(void)
 {
 	int				nb;
-	wchar_t *str;
 
-	str = malloc(sizeof(wchar_t) * 10);
-
-	str[0] = 'f';
-	str[1] = 'u';
-	str[2] = '\0';
-	ft_printf("salut %300i", 230);
+	u_nb = 98765; 
+	ft_printf("ft ->%-u\n", u_nb);
+	printf("print ->%-u\n\n", u_nb);
+/*	ft_printf("ft- ->%-u\n", u_nb);
+	printf("print- ->%-u\n\n", u_nb);
+	ft_printf("ft-12 ->%-12u\n", u_nb);
+	printf("print ->%-12u\n\n", u_nb);*/
 	return (0);
 }

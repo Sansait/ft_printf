@@ -1,46 +1,68 @@
-//verifier qu'on gere biens les flages de type hh, h, l, ll, j et z au depart
-//se mettre daccord sur les prototypes des micor fonctions
+//envoyer chier l'utilisateur si les flags ne sont pas copmatibles
+//on ne recupere pas la bonne valeur en appelant va_arg(param, type)
 #include "ft_printf.h"
+#include <stdio.h>
 
-static void ft_put_u(unsigned int nb)
+void	ft_put_u(unsigned int nb)
 {
 	if (nb / 10)
-		ft_put_u_nbr(nb / 10);
+		ft_put_u(nb / 10);
 	ft_putchar(nb % 10 + 48);
 }
 
-static unsigned int	int_to_u(int nb)
+size_t	len_u(unsigned int nb)
 {
-	//valeur max unsigned int 4294967296
-	unsigned int	result;
-	unsigned int	result2;
+	size_t		len;
+	long int	prod;
 
-	if (nb < 0)
-		result = 4294967296 + nb;
-	result2 = nb;
+	len = 0;
+	prod = 1;
+	while (nb / prod >= 1)
+	{
+		prod *= 10;
+		++len;
+	}
+	return (len);
 }
 
-static int				pick_f_u(const char *ptr, va_list param, t_data *data)
+int		f_u(unsigned int nb, t_data *data)
 {
-	//sharp n'a aucun effet sur un u
-	//plus n'a aucun effet sur un u
-	//space n'a aucun effet sur un u
-	int	nb;
+	ft_put_u(nb);
+	return (0);
+}
 
-	nb = ft_atoi(ptr);//nombre a envoyer aux fonctions
-	if (data->flag[MINUS])
-	{//prevaut sur la largeur
-		if (data->precision > 0)
-		{
-			//unsigned flad - plus data precision 
-		}
-		//fonction : unsigned flag - 
+int		f_u_min(unsigned int nb, t_data *data)
+{
+	size_t			len;
+
+	printf("MIN\n");
+	len = len_u(nb);
+	ft_put_u(nb);
+	if (len < data->width)
+		while (++len <= data->width)
+			ft_putchar(' ');
+	return (0);
+}
+
+int		pick_f_u(va_list param, t_data *data)
+{//fonction appellee dans path, variable convertion
+	unsigned int	nb;
+
+	nb = va_arg(param, unsigned int);
+	printf("nb traite -> %u\n", nb);
+	if (data->flags[MINUS])
+	{	
+		printf("data flags -> %d\n", data->flags[MINUS]);
+		if (data->width > 0)
+			f_u_min(nb, data);
+		else
+			f_u(nb, data);
 	}
-	else if (data->flag[ZERO])
+	else if (data->flags[ZERO])
 	{//prevaut sur la largeur
 		if (data->precision > 0)
 		{
-			//unsigned flag 0 plus data precision
+			//unsigned flag 0 + data precision
 		}
 		//fonction unsigned flag 0
 	}
@@ -54,6 +76,11 @@ static int				pick_f_u(const char *ptr, va_list param, t_data *data)
 		{
 			//une fonction : data precision tout court
 		}
+	}
+	else
+	{//cas normal
+		printf("data->flags : %d\n", data->flags[MINUS]);
+		f_u(nb, data);
 	}
 	return (0);
 }
