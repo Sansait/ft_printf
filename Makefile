@@ -13,7 +13,7 @@
 
 NAME = ft_printf
 
-SRC = main.c to_base.c string.c
+SRC = main.c to_base.c string.c int.c length.c flags.c path.c precision.c
 
 OBJ = $(SRC:.c=.o) 
 

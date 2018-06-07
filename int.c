@@ -45,7 +45,7 @@ unsigned int n;
 	return (0);
 }
 
-int		unsignedint_param_hexm(const char *ptr, va_list param)
+int		unsignedint_param_hexc(const char *ptr, va_list param)
 {
 	unsigned int n;
 

@@ -26,7 +26,7 @@ int		length_h(const char *ptr, t_data *data)
 int		length_l(const char *ptr, t_data *data)
 {
 	data->length[L] = 1;
-	if (*(ptr + 1) == 'h')
+	if (*(ptr + 1) == 'l')
 	{
 		data->length[L] = 2;
 		return (2);

@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 15:21:52 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/06 15:24:15 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/07 12:06:05 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@
 # define J 2
 # define Z 3
 
+# define BASE_O "01234567"
+# define BASE_HC "0123456789ABCDEF"
+# define BASE_H "0123456789abcdef"
+
 struct s_data
 {
 	int		flags[5];
@@ -36,29 +40,33 @@ struct s_data
 
 typedef struct s_data	t_data;
 
-int		path(char *ptr, va_list param, t_data *data);
-int		conversion(const char *ptr, va_list param, t_data *data);
-int		int_param(const char * str, va_list param);
-int		string_param(const char *ptr, va_list param);
-int		void_param(const char *ptr, va_list param);
-int		unsignedint_param_oct(const char *ptr, va_list param);
-int		unsignedint_param(const char *ptr, va_list param);
-int		unsignedint_param_hex(const char *ptr, va_list param);
-int		unsignedint_param_hexm(const char *ptr, va_list param);
-int		flags(const char *ptr, t_data *data);
-int		flag_sharp(t_data *data);
-int		flag_zero(t_data *data);
-int		flag_minus(t_data *data);
-int		flag_plus(t_data *data);
-int		flag_space(t_data *data);
-int		length(const char *ptr, t_data *data);
-int		length_h(const char *ptr, t_data *data);
-int		length_l(const char *ptr, t_data *data);
-int		length_j(t_data *data);
-int		length_z(t_data *data);
-int		width(char *ptr, t_data *data);
-int		precision(char *ptr, t_data *data);
-int		width_min(char *ptr, t_data *data);
+int				path(char *ptr, va_list param, t_data *data);
+int				conversion(const char *ptr, va_list param, t_data *data);
+int				int_param(const char * str, va_list param);
+int				string_param(const char *ptr, va_list param);
+int				void_param(const char *ptr, va_list param);
+int				unsignedint_param_oct(const char *ptr, va_list param);
+int				unsignedint_param(const char *ptr, va_list param);
+int				unsignedint_param_hex(const char *ptr, va_list param);
+int				unsignedint_param_hexc(const char *ptr, va_list param);
+int				flags(const char *ptr, t_data *data);
+int				flag_sharp(t_data *data);
+int				flag_zero(t_data *data);
+int				flag_minus(t_data *data);
+int				flag_plus(t_data *data);
+int				flag_space(t_data *data);
+int				length(const char *ptr, t_data *data);
+int				length_h(const char *ptr, t_data *data);
+int				length_l(const char *ptr, t_data *data);
+int				length_j(t_data *data);
+int				length_z(t_data *data);
+int						width(char *ptr, t_data *data);
+int						precision(char *ptr, t_data *data);
+int						width_min(char *ptr, t_data *data);
+char					*to_base(int nb, char *base);//to_base
+static int				pick_f_u(t_data *data);//pick_f_u_int.c
+static unsigned int		int_to_u(int nb);//pick_f_u_int.c
+static void				ft_put_u(unsigned int nb);//pick_f_u_int.c
 
 
 #endif

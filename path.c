@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/06 18:16:59 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/07 11:38:11 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 {
 	if (*ptr == 's' || *ptr == 'S')
 		string_param(ptr, param);
-	else if (*ptr == 'p')
-		void_param(ptr, param);
+//	else if (*ptr == 'p')
+//		void_param(ptr, param);
 	else if (*ptr == 'd' || *ptr == 'i' || *ptr == 'D')
 		int_param(ptr, param);
 	else if (*ptr == 'o' || *ptr == 'O')
@@ -82,8 +82,8 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 	else if (*ptr == 'x')
 		unsignedint_param_hex(ptr, param);
 	else if (*ptr == 'X')
-		unsignedint_param_hexm(ptr, param);
+		unsignedint_param_hexc(ptr, param);
 	else if (*ptr == 'c' || *ptr == 'C')
-		unsignedint_param_hexm(ptr, param);
+		unsignedint_param_hexc(ptr, param);
 	return (0);
 }
