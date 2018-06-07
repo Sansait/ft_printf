@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/07 16:59:55 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/07 17:08:34 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,17 @@ int		width(char *ptr, t_data *data)
 
 int		flags(const char *ptr, t_data *data)
 {
-	int	ret;
-
-	ret = 0;
-	ret = (flag_sharp(ptr, data) > 0)? 1 : ret;	
-	ret = (flag_zero(ptr, data) > 0)? 1 : ret;	
-	ret = (flag_minus(ptr, data) > 0)? 1 : ret;	
-	ret = (flag_plus(ptr, data) > 0)? 1 : ret;	
-	ret = (flag_space(ptr, data) > 0)? 1 : ret;	
-	return ((ret == 1)? 1 : 0);
+	if (*ptr == '#')
+		return (flag_sharp(data));
+	else if (*ptr == '0')
+		return (flag_zero(data));
+	else if (*ptr == '-')
+		return (flag_minus(data));
+	else if (*ptr == '+')
+		return (flag_plus(data));
+	else if (*ptr == ' ')
+		return (flag_space(data));
+	return (0);
 }
 
 int		length(const char *ptr, t_data *data)
@@ -71,8 +73,8 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 {
 	if (*ptr == 's' || *ptr == 'S')
 		string_param(ptr, param);
-//	else if (*ptr == 'p')
-//		void_param(ptr, param);
+	//	else if (*ptr == 'p')
+	//		void_param(ptr, param);
 	else if (*ptr == 'd' || *ptr == 'i' || *ptr == 'D')
 		int_param(ptr, param);
 	else if (*ptr == 'o' || *ptr == 'O')
