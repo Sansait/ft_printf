@@ -36,8 +36,6 @@ int		width(char *ptr, t_data *data)
 		return (precision(ptr + 1, data) + 1);
 	else if (*ptr > '0' && *ptr <= '9')
 		return (width_min(ptr, data));
-	data->width = 0;
-	data->precision= 0;
 	return (0);
 }
 

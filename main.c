@@ -55,13 +55,10 @@ int	 ft_printf(const char *str, ...)
 int main(void)
 {
 	int				nb;
+	unsigned int			u_nb;
 
 	u_nb = 98765; 
-	ft_printf("ft ->%-u\n", u_nb);
-	printf("print ->%-u\n\n", u_nb);
-/*	ft_printf("ft- ->%-u\n", u_nb);
-	printf("print- ->%-u\n\n", u_nb);
-	ft_printf("ft-12 ->%-12u\n", u_nb);
-	printf("print ->%-12u\n\n", u_nb);*/
+	ft_printf("ft ->%--6u\n", u_nb);
+	printf("print ->%--6u\n\n", u_nb);
 	return (0);
 }

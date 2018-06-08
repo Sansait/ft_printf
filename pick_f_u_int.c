@@ -49,10 +49,9 @@ int		pick_f_u(va_list param, t_data *data)
 	unsigned int	nb;
 
 	nb = va_arg(param, unsigned int);
-	printf("nb traite -> %u\n", nb);
 	if (data->flags[MINUS])
 	{	
-		printf("data flags -> %d\n", data->flags[MINUS]);
+		printf("data width -> %d\n", data->precision);
 		if (data->width > 0)
 			f_u_min(nb, data);
 		else
