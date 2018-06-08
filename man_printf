@@ -20,6 +20,7 @@ X -> base 16 majuscule non signee
 o -> base 16 comme %#x ou %#lx
 
 u -> unsigned int
+	priorite a la precision, puis a la largeur de champ minimum
 
 d, i -> agr int en chiffre decimal signe
 PRECISION -> nombre minimal de chiffre qui doivent apparaitre, si la convertion donne moins de chiffre, on écrit des 0 a gauche du chiffre

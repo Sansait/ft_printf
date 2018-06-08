@@ -1,5 +1,6 @@
 //envoyer chier l'utilisateur si les flags ne sont pas copmatibles
 //on ne recupere pas la bonne valeur en appelant va_arg(param, type)
+//FIX 0
 #include "ft_printf.h"
 #include <stdio.h>
 
@@ -25,61 +26,67 @@ size_t	len_u(unsigned int nb)
 	return (len);
 }
 
-int		f_u(unsigned int nb, t_data *data)
+int	f_u_precision(unsigned int nb, t_data *data)
 {
-	ft_put_u(nb);
+	int	precision;
+
+	precision = data->precision;
+	if (precision > 0)
+		while (--precision >= 0)
+			ft_putchar('0');
 	return (0);
 }
 
-int		f_u_min(unsigned int nb, t_data *data)
+int	f_u_width(unsigned int nb, t_data *data)
 {
-	size_t			len;
+	int	width;
 
-	printf("MIN\n");
-	len = len_u(nb);
-	ft_put_u(nb);
-	if (len < data->width)
-		while (++len <= data->width)
+	width = data->width - (data->len + data->precision);
+	if (width > 0)
+		while (--width >= 0)
 			ft_putchar(' ');
 	return (0);
 }
 
-int		pick_f_u(va_list param, t_data *data)
+int	pick_f_u(va_list param, t_data *data)
 {//fonction appellee dans path, variable convertion
+	//la precision prevaut sur le flag 0
 	unsigned int	nb;
 
 	nb = va_arg(param, unsigned int);
+	data->len = len_u(nb);
+	data->precision = (data->precision > data->len) ? data->precision - data->len : 0;
 	if (data->flags[MINUS])
 	{	
-		printf("data width -> %d\n", data->precision);
-		if (data->width > 0)
-			f_u_min(nb, data);
-		else
-			f_u(nb, data);
+		f_u_precision(nb, data);
+		ft_put_u(nb);
+		f_u_width(nb, data);
 	}
-	else if (data->flags[ZERO])
-	{//prevaut sur la largeur
-		if (data->precision > 0)
-		{
-			//unsigned flag 0 + data precision
-		}
-		//fonction unsigned flag 0
+	else if (data->precision > 0 && data->width > 0)
+	{//nombre minimum de chiffres
+		f_u_width(nb, data);
+		f_u_precision(nb, data);
+		ft_put_u(nb);
 	}
 	else if (data->precision > 0)
-	{//nombre minimum de chiffres
-		if (data->width > 0)//taille minimum du champ
-		{
-			//une fonction : data precision + data width
-		}
-		else
-		{
-			//une fonction : data precision tout court
-		}
+	{
+		f_u_precision(nb, data);
+		ft_put_u(nb);
+	}
+	else if (data->flags[ZERO])
+	{//prevaut sur la largeur 
+		printf("zero precision-> %d\n", data->precision);
+		ft_put_u(nb);
+	}
+	else if (data->width > 0)
+	{
+		f_u_width(nb, data);
+		ft_put_u(nb);
 	}
 	else
 	{//cas normal
 		printf("data->flags : %d\n", data->flags[MINUS]);
-		f_u(nb, data);
+		ft_put_u(nb);
 	}
 	return (0);
 }

@@ -44,7 +44,7 @@ int		flags(const char *ptr, t_data *data)
 	if (*ptr == '#')
 		return (flag_sharp(data));
 	else if (*ptr == '0')
-		return (flag_zero(data));
+		return (flag_zero(data, ptr));
 	else if (*ptr == '-')
 		return (flag_minus(data));
 	else if (*ptr == '+')

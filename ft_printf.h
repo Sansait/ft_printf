@@ -36,6 +36,8 @@ struct s_data
 	int		length[4];
 	int		precision;
 	int		width;
+	int		zero;
+	size_t		len;
 };
 
 typedef struct s_data	t_data;
@@ -51,7 +53,7 @@ int				unsignedint_param_hex(const char *ptr, va_list param);
 int				unsignedint_param_hexc(const char *ptr, va_list param);
 int				flags(const char *ptr, t_data *data);
 int				flag_sharp(t_data *data);
-int				flag_zero(t_data *data);
+int				flag_zero(t_data *data, const char *ptr);
 int				flag_minus(t_data *data);
 int				flag_plus(t_data *data);
 int				flag_space(t_data *data);
