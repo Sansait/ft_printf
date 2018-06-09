@@ -57,9 +57,9 @@ int main(void)
 	int				nb;
 	unsigned int			u_nb;
 
-	u_nb = 98765; 
-	printf("precision de 12 largeur de 14\n");
-	ft_printf("ft    ->%023.1u\n", u_nb);
-	printf("print ->%023.1u\n\n", u_nb);
+	u_nb = 6; 
+	nb = 76; 
+	ft_printf("ft    ->%x\n", nb);
+	printf("print ->%u\n\n", nb);
 	return (0);
 }

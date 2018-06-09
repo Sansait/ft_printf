@@ -62,13 +62,12 @@ int				length_h(const char *ptr, t_data *data);
 int				length_l(const char *ptr, t_data *data);
 int				length_j(t_data *data);
 int				length_z(t_data *data);
-int						width(char *ptr, t_data *data);
-int						precision(char *ptr, t_data *data);
-int						width_min(char *ptr, t_data *data);
-char					*to_base(int nb, char *base);//to_base
-int				pick_f_u(va_list param, t_data *data);//pick_f_u_int.c
-void			ft_put_u(unsigned int nb);//pick_f_u_int.c
-size_t			len_u(unsigned int nb);
+int				width(char *ptr, t_data *data);
+int				precision(char *ptr, t_data *data);
+int				width_min(char *ptr, t_data *data);
+char				*to_base(int nb, char *base);
+int				pick_f_u(va_list param, t_data *data);
+int				pick_f_x(va_list param, t_data *data);
 
 
 #endif

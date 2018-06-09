@@ -21,6 +21,8 @@ int		precision(char *ptr, t_data *data)
 		i++;
 	if (i > 0)
 		data->precision = ft_atoi(ptr);
+	else
+		data->precision = 1;
 	return (i);
 }
 

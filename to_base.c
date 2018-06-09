@@ -6,14 +6,11 @@ char	*to_base(int nb, char *base)
 	int		i;
 	int		prod;
 	int		tmp;
-	char	*result;
+	char		*result;
 
 	if (!base)
 		return (NULL);
-	if (ft_strcmp(base, BASE_O) == 0)
-		prod = 8;
-	else 
-		prod = 16;
+	prod = (ft_strcmp(base, BASE_O) == 0) ? 8 : 16;
 	i = (nb < prod)? 1 : 0;
 	tmp = nb;
 	while (tmp > 0)
