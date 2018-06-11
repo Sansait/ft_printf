@@ -79,10 +79,8 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 		unsignedint_param_oct(ptr, param);
 	else if (*ptr == 'u' || *ptr == 'U')
 		pick_f_u(param, data);
-	else if (*ptr == 'x')
-		pick_f_x(param, data);
-	else if (*ptr == 'X')
-		unsignedint_param_hexc(ptr, param);
+	else if (*ptr == 'x' || *ptr == 'X')
+		pick_f_x(param, data, ptr);
 	else if (*ptr == 'c' || *ptr == 'C')
 		unsignedint_param_hexc(ptr, param);
 	return (0);

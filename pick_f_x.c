@@ -1,41 +1,68 @@
 #include <stdio.h>
 #include "ft_printf.h"
 
-int	pick_f_x(va_list param, t_data *data)
+int	f_x_sharp(t_data *data, const char *ptr)
 {
-	char	*result;
+	if (data->flags[SHARP] && *ptr == 'x')
+		ft_putstr("0x");
+	else if (data->flags[SHARP] && *ptr == 'X')
+		ft_putstr("0X");
+	return (0);
+}
 
-	result = (to_base(va_arg(param, int), BASE_H));
-	printf("result -> %s\n", result);
-/*	if (data->flags[MINUS])
-	{	
-		f_u_precision(data);
-		ft_put_u(nb);
-		f_u_width(data);
-	}
-	else if (data->precision > 0 && data->width > 0)
+int	pick_f_x_two(char *result, t_data *data, const char *ptr)
+{
+	if (data->precision > 0)
 	{
-		f_u_width(data);
-		f_u_precision(data);
-		ft_put_u(nb);
-	}
-	else if (data->precision > 0)
-	{
-		f_u_width(data);
-		f_u_precision(data);
-		ft_put_u(nb);
+		f_width(data);
+		f_x_sharp(data, ptr);
+		f_precision(data);
+		ft_putstr(result);
 	}
 	else if (data->flags[ZERO])
 	{ 
-		f_u_width(data);
-		ft_put_u(nb);
+		f_width(data);
+		f_x_sharp(data, ptr);
+		ft_putstr(result);
 	}
 	else if (data->width > 0)
 	{
-		f_u_width(data);
-		ft_put_u(nb);
+		f_width(data);
+		f_x_sharp(data, ptr);
+		ft_putstr(result);
 	}
 	else
-		ft_put_u(nb);*/
+	{
+		f_x_sharp(data, ptr);
+		ft_putstr(result);
+	}
+	return (0);
+}
+
+int	pick_f_x(va_list param, t_data *data, const char *ptr)
+{
+	//comportement indéfini precision et largeur = int max
+	char	*result;
+
+	result = (*ptr == 'x') ? to_base(va_arg(param, int), BASE_H) : to_base(va_arg(param, int), BASE_HC);
+	data->len = ft_strlen(result);
+	data->precision = (data->precision > data->len) ? data->precision - (data->len): 0;
+	data->len = (data->flags[SHARP]) ? ft_strlen(result) + 2 : ft_strlen(result);
+	if (data->flags[MINUS])
+	{//OP
+		f_x_sharp(data, ptr);
+		f_precision(data);
+		ft_putstr(result);
+		f_width(data);
+	}
+	else if (data->precision > 0 && data->width > 0)
+	{//OP
+		f_width(data);
+		f_x_sharp(data, ptr);
+		f_precision(data);
+		ft_putstr(result);
+	}
+	else (pick_f_x_two(result, data, ptr));
+	free(result);
 	return (0);
 }

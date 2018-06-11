@@ -42,32 +42,36 @@ struct s_data
 
 typedef struct s_data	t_data;
 
-int				path(char *ptr, va_list param, t_data *data);
-int				conversion(const char *ptr, va_list param, t_data *data);
-int				int_param(const char * str, va_list param);
-int				string_param(const char *ptr, va_list param);
-int				void_param(const char *ptr, va_list param);
-int				unsignedint_param_oct(const char *ptr, va_list param);
-int				unsignedint_param(const char *ptr, va_list param);
-int				unsignedint_param_hex(const char *ptr, va_list param);
-int				unsignedint_param_hexc(const char *ptr, va_list param);
-int				flags(const char *ptr, t_data *data);
-int				flag_sharp(t_data *data);
-int				flag_zero(t_data *data, const char *ptr);
-int				flag_minus(t_data *data);
-int				flag_plus(t_data *data);
-int				flag_space(t_data *data);
-int				length(const char *ptr, t_data *data);
-int				length_h(const char *ptr, t_data *data);
-int				length_l(const char *ptr, t_data *data);
-int				length_j(t_data *data);
-int				length_z(t_data *data);
-int				width(char *ptr, t_data *data);
-int				precision(char *ptr, t_data *data);
-int				width_min(char *ptr, t_data *data);
-char				*to_base(int nb, char *base);
-int				pick_f_u(va_list param, t_data *data);
-int				pick_f_x(va_list param, t_data *data);
+int	path(char *ptr, va_list param, t_data *data);
+int	conversion(const char *ptr, va_list param, t_data *data);
+int	int_param(const char * str, va_list param);
+int	string_param(const char *ptr, va_list param);
+int	void_param(const char *ptr, va_list param);
+int	unsignedint_param_oct(const char *ptr, va_list param);
+int	unsignedint_param(const char *ptr, va_list param);
+int	unsignedint_param_hex(const char *ptr, va_list param);
+int	unsignedint_param_hexc(const char *ptr, va_list param);
+int	flags(const char *ptr, t_data *data);
+int	flag_sharp(t_data *data);
+int	flag_zero(t_data *data, const char *ptr);
+int	flag_minus(t_data *data);
+int	flag_plus(t_data *data);
+int	flag_space(t_data *data);
+int	length(const char *ptr, t_data *data);
+int	length_h(const char *ptr, t_data *data);
+int	length_l(const char *ptr, t_data *data);
+int	length_j(t_data *data);
+int	length_z(t_data *data);
+int	width(char *ptr, t_data *data);
+int	precision(char *ptr, t_data *data);
+int	width_min(char *ptr, t_data *data);
+char	*to_base(int nb, char *base);
+int	pick_f_u(va_list param, t_data *data);
+int	pick_f_x(va_list param, t_data *data, const char *ptr);
+int	pick_f_c(va_list param, t_data *data);
+int	f_precision(t_data *data);
+int	f_zero(t_data *data);
+int	f_width(t_data *data);
 
 
 #endif

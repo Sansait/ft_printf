@@ -54,12 +54,14 @@ int	 ft_printf(const char *str, ...)
 
 int main(void)
 {
-	int				nb;
-	unsigned int			u_nb;
+	int		nb;
+	unsigned int	u_nb;
+	char		c;
 
-	u_nb = 6; 
-	nb = 76; 
-	ft_printf("ft    ->%x\n", nb);
-	printf("print ->%u\n\n", nb);
+	u_nb = 76987; 
+	nb = 898796;
+	c = 'a';
+	//ft_printf("ft    ->%678.78x\n", c);
+	printf("print ->%012c\n", c);
 	return (0);
 }

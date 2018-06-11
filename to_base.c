@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include "ft_printf.h"
 
+char	*ft_swap_chars(char *str)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	j = 0;
+	while (str[++j])
+		str[++i] = str[j];
+	str[--j] = '\0';
+	return (str);
+}
+
 char	*to_base(int nb, char *base)
 {
 	int		i;
@@ -20,10 +33,13 @@ char	*to_base(int nb, char *base)
 	}
 	if (!(result = ft_strnew(i)))
 		return (NULL);
+	result[i] = '\0';
 	while (--i >= 0)
 	{
 		result[i] = base[nb % prod];
 		nb = nb / prod;
 	}
+	if (result[++i] == '0')
+		result = ft_swap_chars(result);
 	return (result);
 }

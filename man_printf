@@ -67,6 +67,7 @@ precision .[nombre] -> donne le nombre minimum de chiffre a afficher pour d, i, 
 	-> donne le nombre maximum de caracteres a afficher pour s 
 	si le nombre est oublie, la precision est de 0
 	si le nombre est superieur a int, il va boucler la valeur de la precision tout simplement (en gros la fonction qui soccupe de ca prend un int en parametres)
+	s'il y a un #, il n'affecte pas la précision
 
 taille minimum -> si la valeur convertie a moins de caracteres que la taille minimum, on ajoute des espaces a gauche
 	LEFT ADJUSTMENT FLAG -> les espaces sont ajoutés a droite (cas que lon ne gere pas je crois )
