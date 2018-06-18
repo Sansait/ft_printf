@@ -7,6 +7,8 @@ int	f_x_sharp(t_data *data, const char *ptr)
 		ft_putstr("0x");
 	else if (data->flags[SHARP] && *ptr == 'X')
 		ft_putstr("0X");
+	if (data->flags[SHARP] && (*ptr == 'x' || *ptr == 'X'))
+		data->ret_val += 2;
 	return (0);
 }
 
@@ -17,24 +19,24 @@ int	pick_f_x_two(char *result, t_data *data, const char *ptr)
 		f_width(data);
 		f_x_sharp(data, ptr);
 		f_precision(data);
-		ft_putstr(result);
+		print_str(result, data);
 	}
 	else if (data->flags[ZERO])
 	{ 
 		f_width(data);
 		f_x_sharp(data, ptr);
-		ft_putstr(result);
+		print_str(result, data);
 	}
 	else if (data->width > 0)
 	{
 		f_width(data);
 		f_x_sharp(data, ptr);
-		ft_putstr(result);
+		print_str(result, data);
 	}
 	else
 	{
 		f_x_sharp(data, ptr);
-		ft_putstr(result);
+		print_str(result, data);
 	}
 	return (0);
 }

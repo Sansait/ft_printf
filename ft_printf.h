@@ -37,6 +37,7 @@ struct s_data
 	int		precision;
 	int		width;
 	int		zero;
+	int		ret_val;
 	size_t		len;
 };
 
@@ -64,6 +65,7 @@ int	length_j(t_data *data);
 int	length_z(t_data *data);
 int	width(char *ptr, t_data *data);
 int	precision(char *ptr, t_data *data);
+void	print_str(const char *str, t_data *data);
 int	width_min(char *ptr, t_data *data);
 char	*to_base(int nb, char *base);
 int	pick_f_u(va_list param, t_data *data);
