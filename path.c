@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int		path(char *ptr, va_list param, t_data *data)
 {

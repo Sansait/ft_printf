@@ -82,17 +82,16 @@ int	 ft_printf(const char *str, ...)
 
 
 int main(void)
-{
+{//x a revoir
+	//il est probable que la precision ne soit pas réinitialisée à 0 quand on passe a une convertion suivante
 	int		nb;
 	unsigned int	u_nb;
 	char		c;
 	wchar_t		test;
 
-	printf("retour -> %d\n", ft_printf("Salut, c'est nous -> %u, %u, %x", 42949672, 74, 876));
-	printf("retour -> %d\n", printf("Salut, c'est vous -> %u, %u, %x", 42949672, 74, 876));
+	printf("retour -> %d\n", ft_printf("Salut, c'est nous -> %12u, %012.16u, %014x", 42949672, 74, 876));
+	printf("retour -> %d\n", printf("Salut, c'est vous -> %12u, %012.16u, %014x", 42949672, 74, 876));
 	nb = 8;
 	u_nb = 76987; 
-	wprintf(L"%lx\n", test);
-	//	printf("%zu", sizeof(wchar_t));
 	return (0);
 }

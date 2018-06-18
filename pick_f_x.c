@@ -16,25 +16,30 @@ int	pick_f_x_two(char *result, t_data *data, const char *ptr)
 {
 	if (data->precision > 0)
 	{
+		printf("PRECISION -> %d\n", data->precision);
 		f_width(data);
 		f_x_sharp(data, ptr);
 		f_precision(data);
 		print_str(result, data);
 	}
 	else if (data->flags[ZERO])
-	{ 
+	{//ne fonctionne pas avec 012.14x 
+	//mauvaise valeur de retour avec une précision
+		printf("ZERO\n");
 		f_width(data);
 		f_x_sharp(data, ptr);
 		print_str(result, data);
 	}
 	else if (data->width > 0)
 	{
+		printf("WIDTH\n");
 		f_width(data);
 		f_x_sharp(data, ptr);
 		print_str(result, data);
 	}
 	else
 	{
+		printf("ELSE\n");
 		f_x_sharp(data, ptr);
 		print_str(result, data);
 	}
@@ -52,17 +57,19 @@ int	pick_f_x(va_list param, t_data *data, const char *ptr)
 	data->len = (data->flags[SHARP]) ? ft_strlen(result) + 2 : ft_strlen(result);
 	if (data->flags[MINUS])
 	{//OP
+		printf("MINUS\n");
 		f_x_sharp(data, ptr);
 		f_precision(data);
 		ft_putstr(result);
 		f_width(data);
 	}
 	else if (data->precision > 0 && data->width > 0)
-	{//OP
+		{//OP
+		printf("data->precision -> %d\n, data->width -> %d\n", data->precision, data->width);
 		f_width(data);
 		f_x_sharp(data, ptr);
 		f_precision(data);
-		ft_putstr(result);
+		print_str(result, data);
 	}
 	else (pick_f_x_two(result, data, ptr));
 	free(result);

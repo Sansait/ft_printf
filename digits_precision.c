@@ -31,9 +31,6 @@ int	f_width(t_data *data)
 	int	width;
 
 	width = data->width - (data->len + data->precision);
-	printf("width = %d\n", width);
-	printf("data->len %zu\n", data->len);
-	printf("data->precision %d\n", data->precision);
 	if (width > 0)
 		while (--width >= 0)
 		{
