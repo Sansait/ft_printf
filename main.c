@@ -13,6 +13,18 @@
 
 #include "ft_printf.h"
 #include <stdio.h>
+#include <wchar.h>
+
+int	printuntil(char *str, const char *ptr)
+{
+	size_t i;
+
+	i = 0;
+	while (str + i != ptr && str[i] != '\0')
+		i++;
+	write(1, str, i);
+	return (str + i);
+}  
 
 void	init_struct(t_data *data)
 {
@@ -32,7 +44,7 @@ int	 ft_printf(const char *str, ...)
 {
 	va_list		pointerlst;
 	char 		*ptr;
-	int			i;
+	int		i;
 	t_data		data;
 
 	va_start(pointerlst, str);
@@ -57,11 +69,12 @@ int main(void)
 	int		nb;
 	unsigned int	u_nb;
 	char		c;
+	wchar_t		test;
 
+	printf("retour -> %d\n", ft_printf(""));
+	nb = 8;
 	u_nb = 76987; 
-	nb = 898796;
-	c = 'a';
-	//ft_printf("ft    ->%678.78x\n", c);
-	printf("print ->%012c\n", c);
+	wprintf(L"%lx\n", test);
+	//	printf("%zu", sizeof(wchar_t));
 	return (0);
 }

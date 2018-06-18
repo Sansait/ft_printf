@@ -82,6 +82,6 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 	else if (*ptr == 'x' || *ptr == 'X')
 		pick_f_x(param, data, ptr);
 	else if (*ptr == 'c' || *ptr == 'C')
-		unsignedint_param_hexc(ptr, param);
+		pick_f_c(param, data);
 	return (0);
 }

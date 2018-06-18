@@ -13,7 +13,7 @@
 
 NAME = ft_printf
 
-SRC = main.c to_base.c string.c int.c length.c flags.c path.c precision.c pick_f_u_int.c pick_f_x.c digits_precision.c
+SRC = main.c to_base.c string.c int.c length.c flags.c path.c precision.c pick_f_u_int.c pick_f_x.c digits_precision.c pick_f_c.c
 
 OBJS = $(addprefix $(DIR), $(OBJ))
 
