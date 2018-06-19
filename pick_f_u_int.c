@@ -1,6 +1,3 @@
-//envoyer chier l'utilisateur si les flags ne sont pas copmatibles
-//on ne recupere pas la bonne valeur en appelant va_arg(param, type)
-//FIX 0
 #include "ft_printf.h"
 #include <stdio.h>
 

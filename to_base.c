@@ -16,9 +16,9 @@ char	*ft_swap_chars(char *str)
 
 char	*to_base(int nb, char *base)
 {
-	int		i;
-	int		prod;
-	int		tmp;
+	int			i;
+	int			prod;
+	int			tmp;
 	char		*result;
 
 	if (!base)
@@ -39,7 +39,7 @@ char	*to_base(int nb, char *base)
 		result[i] = base[nb % prod];
 		nb = nb / prod;
 	}
-	if (result[++i] == '0')
+	if (result[++i] == '0' && nb != 0)
 		result = ft_swap_chars(result);
 	return (result);
 }

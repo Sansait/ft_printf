@@ -1,7 +1,7 @@
 // NO SHARP
 // NO PRECISION
-// MINUS -> bancks on the left
-// 0, overrided by - 
+// NO 0
+// MINUS -> blancks on the left
 // width -> usual
 #include "ft_printf.h"
 #include <stdio.h>
@@ -11,6 +11,18 @@ int	pick_f_c(va_list param, t_data *data)
 	char	result;
 
 	result = va_arg(param, int);
-	printf("result -> %c\n", result);
+	data->len = 1;
+	if (data->flags[MINUS])
+	{
+		print_char(result, data);
+		f_width(data);
+	}
+	else if (data->width)
+	{
+		f_width(data);
+		print_char(result, data);
+	}
+	else
+		print_char(result, data);
 	return (0);
 }

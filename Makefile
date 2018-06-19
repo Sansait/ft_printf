@@ -6,7 +6,7 @@
 #    By: jlehideu <jlehideu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/18 10:23:16 by jlehideu          #+#    #+#              #
-#    Updated: 2018/06/07 14:25:27 by jlehideu         ###   ########.fr        #
+#    Updated: 2018/06/19 12:50:09 by jlehideu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):	$(OBJ)
-		gcc -o $(NAME) $(OBJ) -lft -L./libft/.
+		gcc $(FLAGS) -o $(NAME) $(OBJ) -lft -L./libft/.
+		rm -f $(OBJ)
 
 clean:
 		rm -f $(OBJ)

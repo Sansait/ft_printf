@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/07 15:35:19 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/19 12:49:46 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,6 @@ int	printuntil(const char *str, const char *ptr)
 	return (i);
 }
 
-void	print_str(const char *str, t_data *data)
-{//un putstr qui incrémente notre valeur de retour
-	while (*str)
-	{
-		ft_putchar(*str);
-		++data->ret_val;
-		++str;
-	}
-}
-
 void	init_struct(t_data *data)
 {
 	int i;
@@ -52,7 +42,7 @@ void	init_struct(t_data *data)
 }
 
 int	 ft_printf(const char *str, ...)
-{
+{//ATTENTION AU :AKEFILE QUI CLEAN DIRECT
 	va_list		pointerlst;
 	char 		*ptr;
 	int		i;
@@ -82,16 +72,16 @@ int	 ft_printf(const char *str, ...)
 
 
 int main(void)
-{//x a revoir
+{
 	//il est probable que la precision ne soit pas réinitialisée à 0 quand on passe a une convertion suivante
+	//x ne fonctionne pas avec 0
 	int		nb;
 	unsigned int	u_nb;
 	char		c;
 	wchar_t		test;
 
-	printf("retour -> %d\n", ft_printf("Salut, c'est nous -> %12u, %012.16u, %014x", 42949672, 74, 876));
-	printf("retour -> %d\n", printf("Salut, c'est vous -> %12u, %012.16u, %014x", 42949672, 74, 876));
-	nb = 8;
-	u_nb = 76987; 
+	c = 'c';
+	ft_printf("salut c'est nous -> %-2c\n", c);
+	printf("salut c'est vous -> %-2c\n", c);
 	return (0);
 }
