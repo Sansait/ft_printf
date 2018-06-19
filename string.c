@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.c                                             :+:      :+:    :+:   */
+/*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:13:59 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/19 12:41:02 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/19 14:37:46 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		string_param(const char *ptr, va_list param)
+int		pick_f_s(const char *ptr, t_data *data, va_list param)
+{
+	if (*ptr == 'S' || (*ptr == 's' && data->flags[L] == 1))
+	{}
+
+	return (0);
+}
+
+int		string_param(const char *ptr, t_data *data, va_list param)
 {
 	char *str;
 
 	str = va_arg(param, char*);
-	ft_putstr(str);
+	print_str(str, data);
 	return (0);
 }
 
@@ -25,8 +33,7 @@ void	print_str(const char *str, t_data *data)
 {//un putstr qui incrémente notre valeur de retour
 	while (*str)
 	{
-		ft_putchar(*str);
-		++data->ret_val;
+		print_char(*str, data);
 		++str;
 	}
 }

@@ -30,7 +30,7 @@ int	f_width(t_data *data)
 {
 	int	width;
 
-	width = data->width - (data->len + data->precision);
+	width = (int)(data->width - (data->len + data->precision));
 	if (width > 0)
 		while (--width >= 0)
 		{

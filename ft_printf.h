@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 15:21:52 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/19 12:41:43 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/19 15:37:16 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 struct s_data
 {
 	int		flags[5];
-	int		length[4];
+	int		length[5];
 	int		precision;
 	int		width;
 	int		zero;
@@ -46,7 +46,7 @@ typedef struct s_data	t_data;
 int	path(char *ptr, va_list param, t_data *data);
 int	conversion(const char *ptr, va_list param, t_data *data);
 int	int_param(const char * str, va_list param);
-int	string_param(const char *ptr, va_list param);
+int	string_param(const char *ptr, t_data *data, va_list param);
 int	void_param(const char *ptr, va_list param);
 int	unsignedint_param_oct(const char *ptr, va_list param);
 int	unsignedint_param(const char *ptr, va_list param);
@@ -72,9 +72,13 @@ char	*to_base(int nb, char *base);
 int	pick_f_u(va_list param, t_data *data);
 int	pick_f_x(va_list param, t_data *data, const char *ptr);
 int	pick_f_c(va_list param, t_data *data);
+int	pick_f_s(const char *str, t_data *data, va_list param);
 int	f_precision(t_data *data);
 int	f_zero(t_data *data);
 int	f_width(t_data *data);
+void	init_struct(t_data *data);
+int		check(const char *ptr);
+int		path_check(char *ptr, t_data *data);
 
 
 #endif
