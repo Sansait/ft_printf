@@ -3,6 +3,7 @@
 
 int	main(int argc, char **av)
 {
-	printf("%lli", (long long)(atoi(av[1])));
+	printf("%-i", 58);
+	(void)av;
 	return (argc);
 }
