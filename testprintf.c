@@ -3,7 +3,10 @@
 
 int	main(int argc, char **av)
 {
-	printf("%-i", 58);
+	int v;
+
+	v = '5';
+	printf("%-C", v);
 	(void)av;
 	return (argc);
 }
