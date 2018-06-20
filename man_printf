@@ -33,7 +33,7 @@ j'ai rien compris, cf wcrtomb
 C -> synonyme de lc
 
 s-> argument de type const char str, caracteres ecrits jusau'a l'octet nul  
-	PRECISION -> seul ce nombre de caracteres est ecrit, si la precision est superieure 0 la longueur de la chaine, le \0 est necessaire (??)
+	PRECISION -> seul ce nombre de caracteres est ecrit, si la precision est superieure a la longueur de la chaine, le \0 est necessaire (??)
 	MODIFICATEUR l -> argument wchar_t suppose est un pointeur vers un tableau de caracteres larges
 	PRECISION -> pas plus d'ecotet ecrit que la precision indiquee, mais aucun acratcere octal ne doit etre partiellement ecrit (precision = nombre d'octet et non pas nombre de signes)
 
@@ -84,7 +84,7 @@ h                 short          unsigned short        short *
 l (ell)           long           unsigned long         long *
 ll (ell ell)      long long      unsigned long long    long long *
 j                 intmax_t       uintmax_t             intmax_t *
-z                 (see note)     size_t                (see note)
+z                 size_t         size_t                (see note)
 
 z -> pour d ou i indique que l'argument est de type non signé en taille
 	voir man pour le bonus n

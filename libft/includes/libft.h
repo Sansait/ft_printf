@@ -6,7 +6,7 @@
 /*   By: sklepper <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 16:00:29 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/07 11:47:00 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/19 14:23:20 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strstr(const char *s1, const char *s2);
 char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 int				ft_strcmp(char *s1, char *s2);
-int				ft_atoi(char *str);
+int				ft_atoi(const char *str);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
 size_t			ft_min(size_t a, size_t b);
 int				ft_isalpha(int c);

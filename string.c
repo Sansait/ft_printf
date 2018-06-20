@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:13:59 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/19 14:37:46 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/20 16:46:35 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 int		pick_f_s(const char *ptr, t_data *data, va_list param)
 {
+	char *str;
 	if (*ptr == 'S' || (*ptr == 's' && data->flags[L] == 1))
-	{}
+	{
+		str = va_arg(param, char*);
+	}
 
 	return (0);
 }
 
-int		string_param(const char *ptr, t_data *data, va_list param)
+int		string_param(t_data *data, va_list param)
 {
 	char *str;
 

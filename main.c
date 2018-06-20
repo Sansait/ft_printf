@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/19 15:14:11 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/20 14:08:00 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,12 @@ int main(void)
 {
 	//il est probable que la precision ne soit pas réinitialisée à 0 quand on passe a une convertion suivante
 	//x ne fonctionne pas avec 0
-	int		nb;
-	unsigned int	u_nb;
+//	int		nb;
+//	unsigned int	u_nb;
 	char		c;
-	wchar_t		test;
+//	wchar_t		test;
 
 	c = 'c';
 	ft_printf("salut c'est nous -> %-2c\n", c);
-	printf("salut c'est vous -> %-2c\n", c);
 	return (0);
 }

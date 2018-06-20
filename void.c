@@ -6,13 +6,16 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:22:24 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/19 14:23:20 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/20 16:47:56 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		void_param(const char *ptr, va_list param)
+int		void_param(va_list param)
 {
+	void *v;
+
+	v = va_arg(param, void*);
 	return (0);
 }

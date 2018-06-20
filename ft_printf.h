@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 15:21:52 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/19 15:37:16 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/20 16:56:07 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,18 @@ struct s_data
 	int		width;
 	int		zero;
 	int		ret_val;
-	size_t		len;
+	int		len;
 };
 
 typedef struct s_data	t_data;
 
 int	path(char *ptr, va_list param, t_data *data);
 int	conversion(const char *ptr, va_list param, t_data *data);
-int	int_param(const char * str, va_list param);
-int	string_param(const char *ptr, t_data *data, va_list param);
-int	void_param(const char *ptr, va_list param);
-int	unsignedint_param_oct(const char *ptr, va_list param);
-int	unsignedint_param(const char *ptr, va_list param);
+int	int_param(va_list param);
+int	string_param(t_data *data, va_list param);
+int	void_param(va_list param);
+int	unsignedint_param_oct(va_list param);
+int	unsignedint_param(va_list param);
 int	unsignedint_param_hex(const char *ptr, va_list param);
 int	unsignedint_param_hexc(const char *ptr, va_list param);
 int	flags(const char *ptr, t_data *data);
@@ -64,10 +64,10 @@ int	length_l(const char *ptr, t_data *data);
 int	length_j(t_data *data);
 int	length_z(t_data *data);
 int	width(char *ptr, t_data *data);
-int		precision(char *ptr, t_data *data);
+int		precision(const char *ptr, t_data *data);
 void	print_str(const char *str, t_data *data);
 void	print_char(char c, t_data *data);
-int	width_min(char *ptr, t_data *data);
+int	width_min(const char *ptr, t_data *data);
 char	*to_base(int nb, char *base);
 int	pick_f_u(va_list param, t_data *data);
 int	pick_f_x(va_list param, t_data *data, const char *ptr);
@@ -79,6 +79,11 @@ int	f_width(t_data *data);
 void	init_struct(t_data *data);
 int		check(const char *ptr);
 int		path_check(char *ptr, t_data *data);
+int		check_s(t_data *data);
+int		check_s_c_p(t_data *data);
+int		check_di(t_data *data);
+int		check_ox(t_data *data);
+int		check_u(t_data *data);
 
 
 #endif
