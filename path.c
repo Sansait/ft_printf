@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/20 16:58:44 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/20 17:07:56 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,11 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 		pick_f_u(param, data);
 	else if (*ptr == 'x' || *ptr == 'X')
 		pick_f_x(param, data, ptr);
+/*	else if ((*ptr == 'c' || *ptr = 'C') && data->length[L] = 1)
+		pick_f_w(param, data);*/
 	else if (*ptr == 'c' || *ptr == 'C')
 		pick_f_c(param, data);
+/*	else if (*ptr == '%')
+		pick_f_%(param, data);*/
 	return (0);
 }

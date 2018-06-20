@@ -6,7 +6,11 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/20 14:08:00 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/20 17:07:56 by sklepper         ###   ########.fr       */
+.fr       */
+=======
+/*   Updated: 2018/06/19 17:10:46 by jlehideu         ###   ########.fr       */
+>>>>>>> c16e8532cef999740d74f54876f63ec22c83886e
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +70,7 @@ int	 ft_printf(const char *str, ...)
 	va_end(pointerlst);
 	return (data.ret_val);
 }
+<<<<<<< HEAD
 
 
 int main(void)
@@ -81,3 +86,5 @@ int main(void)
 	ft_printf("salut c'est nous -> %-2c\n", c);
 	return (0);
 }
+=======
+>>>>>>> c16e8532cef999740d74f54876f63ec22c83886e
