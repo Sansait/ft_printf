@@ -58,7 +58,6 @@ int	pick_f_x(va_list param, t_data *data, const char *ptr)
 	}
 	else if (data->precision > 0 && data->width > 0)
 		{//OP
-//		printf("data->precision -> %d\n, data->width -> %d\n", data->precision, data->width);
 		f_width(data);
 		f_x_sharp(data, ptr);
 		f_precision(data);

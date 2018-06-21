@@ -14,6 +14,7 @@
 #include "ft_printf.h"
 #include <stdio.h>
 #include <wchar.h>
+#include <locale.h>
 
 int	printuntil(const char *str, const char *ptr)
 {
@@ -42,7 +43,7 @@ void	init_struct(t_data *data)
 }
 
 int	 ft_printf(const char *str, ...)
-{//ATTENTION AU MAKEFILE QUI CLEAN DIRECT
+{
 	va_list		pointerlst;
 	char 		*ptr;
 	int		i;
@@ -65,4 +66,19 @@ int	 ft_printf(const char *str, ...)
 	ft_printuntil(str, ptr);
 	va_end(pointerlst);
 	return (data.ret_val);
+}
+
+int	main()
+{
+	int	i;
+
+	i = -1;
+	setlocale(LC_ALL, "");
+	printf("vous ret -> %d\n", printf("vous -> %lc\n", 1));
+	printf("nous ret -> %d\n", ft_printf("nous -> %lc\n", 1));
+/*	while (++i < 127)
+	{
+//	printf("%lc\n", i);
+		ft_printf("%lc\n", i);
+	}*/
 }

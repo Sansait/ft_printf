@@ -14,7 +14,7 @@
 
 int		check(const char *str_o)
 {
-	t_data	data;
+/*	t_data	data;
 	char	*str;
 	char	*ptr;
 	int		i;
@@ -30,6 +30,6 @@ int		check(const char *str_o)
 		}
 
 		str = ptr + 1;
-	}
+	}*/
 	return (0);
 }
