@@ -6,18 +6,34 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 15:36:26 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/19 16:02:02 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/20 15:55:16 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int		width_check(char *ptr, t_data *data)
+int		width_check(const char *ptr, t_data *data)
 {
+<<<<<<< HEAD:path_check.c
 /*	if (*ptr == '.')
+=======
+	if (*ptr == '.')
+	{
+		if (data->precision != 0)
+			return (-1);
+>>>>>>> 97fb9986336934f7be98d36bd65f8f264c385b92:Checker/path_check.c
 		return (precision(ptr + 1, data) + 1);
+	}
 	else if (*ptr > '0' && *ptr <= '9')
+<<<<<<< HEAD:path_check.c
 		return (width_min(ptr, data));*/
+=======
+	{
+		if (data->width != 0)
+			return (-1);
+		return (width_min(ptr, data));
+	}
+>>>>>>> 97fb9986336934f7be98d36bd65f8f264c385b92:Checker/path_check.c
 	return (0);
 }
 
@@ -49,6 +65,7 @@ int		length_check(const char *ptr, t_data *data)
 	return (0);
 }
 
+<<<<<<< HEAD:path_check.c
 int		check_s(t_data *data)
 {
 	/*if (data->length[H] > 0 || data->length[L] > 1 || data->length[J] > 0 ||
@@ -62,20 +79,31 @@ int		check_s(t_data *data)
 int		conversion_check(const char *ptr, t_data *data)
 {
 	/*if (*ptr == 's' || *ptr == 'S')
+=======
+
+int		conversion_check(const char *ptr, t_data *data)
+{
+	if (*ptr == 's' || *ptr == 'c')
+>>>>>>> 97fb9986336934f7be98d36bd65f8f264c385b92:Checker/path_check.c
 		return (check_s(data));
-	else if (*ptr == 'p')
-		void_param(ptr);
+	else if (*ptr == 'S' || *ptr == 'C' || *ptr == 'p')
+		return (check_s_c_p(data));
 	else if (*ptr == 'd' || *ptr == 'i' || *ptr == 'D')
-		int_param(ptr);
-	else if (*ptr == 'o' || *ptr == 'O')
-		unsignedint_param_oct(ptr);
+		return (check_di(data));
+	else if (*ptr == 'o' || *ptr == 'O' || *ptr == 'x' || *ptr == 'X')
+		return (check_ox(data));
 	else if (*ptr == 'u' || *ptr == 'U')
+<<<<<<< HEAD:path_check.c
 		pick_f_u(data);
 	else if (*ptr == 'x' || *ptr == 'X')
 		pick_f_x(data, ptr);
 	else if (*ptr == 'c' || *ptr == 'C')
 		pick_f_c(data);*/
 	return (0);
+=======
+		return (check_u(data));
+	return (-1);
+>>>>>>> 97fb9986336934f7be98d36bd65f8f264c385b92:Checker/path_check.c
 }
 
 int		path_check(char *ptr, t_data *data)
@@ -95,3 +123,28 @@ int		path_check(char *ptr, t_data *data)
 		conversion_check(ptr, data);*/
 	return (0);
 }
+<<<<<<< HEAD:path_check.c
+=======
+
+int		check(const char *str)
+{
+	t_data	data;
+	const char	*ptr;
+	int		i;
+
+	ptr = str;
+	while ((ptr = ft_strchr(str, '%')) != NULL)
+	{
+		init_struct(&data);
+		ptr += 1;
+		while (flags_check(ptr, &data) > 0)
+			ptr += 1;
+		while ((i = width_check(ptr, &data)) > 0)
+			ptr += i;
+		if (i == -1 || conversion_check(ptr, &data) == -1)
+			return (-1);
+		str = ptr + 1;
+	}
+	return (0);
+}
+>>>>>>> 97fb9986336934f7be98d36bd65f8f264c385b92:Checker/path_check.c

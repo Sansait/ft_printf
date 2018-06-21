@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-int		precision(char *ptr, t_data *data)
+int		precision(const char *ptr, t_data *data)
 {
 	int i;
 
@@ -27,7 +27,7 @@ int		precision(char *ptr, t_data *data)
 	return (i);
 }
 
-int		width_min(char *ptr, t_data *data)
+int		width_min(const char *ptr, t_data *data)
 {
 	int i;
 

@@ -6,11 +6,11 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 15:01:20 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/19 15:37:16 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/20 12:16:00 by sklepper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int		check(const char *str_o)
 {
@@ -33,3 +33,4 @@ int		check(const char *str_o)
 	}*/
 	return (0);
 }
+
