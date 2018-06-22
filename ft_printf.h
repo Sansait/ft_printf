@@ -64,7 +64,7 @@ int	length_l(const char *ptr, t_data *data);
 int	length_j(t_data *data);
 int	length_z(t_data *data);
 int	width(char *ptr, t_data *data);
-int		precision(const char *ptr, t_data *data);
+int	precision(const char *ptr, t_data *data);
 void	print_str(const char *str, t_data *data);
 void	print_char(char c, t_data *data);
 int	width_min(const char *ptr, t_data *data);
@@ -74,17 +74,18 @@ int	pick_f_x(va_list param, t_data *data, const char *ptr);
 int	pick_f_c(va_list param, t_data *data);
 int	pick_f_s(const char *str, t_data *data, va_list param);
 int	pick_f_w(t_data *data, va_list param);
+int	pick_f_percent(va_list param, t_data *data) ;
 int	f_precision(t_data *data);
 int	f_zero(t_data *data);
 int	f_width(t_data *data);
 void	init_struct(t_data *data);
 int	check(const char *ptr);
 int	path_check(char *ptr, t_data *data);
-int		check_s(t_data *data);
-int		check_s_c_p(t_data *data);
-int		check_di(t_data *data);
-int		check_ox(t_data *data);
-int		check_u(t_data *data);
+int	check_s(t_data *data);
+int	check_s_c_p(t_data *data);
+int	check_di(t_data *data);
+int	check_ox(t_data *data);
+int	check_u(t_data *data);
 
 
 #endif

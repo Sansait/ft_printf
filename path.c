@@ -24,8 +24,6 @@ int		path(char *ptr, va_list param, t_data *data)
 		return (i);
 	else if ((i = width(ptr, data)) > 0)
 		return (i);
-	else if (*ptr == '%')
-		ft_putchar('%');
 	else
 		conversion(ptr, param, data);
 	return (0);
@@ -72,8 +70,8 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 {
 	if (*ptr == 's' || *ptr == 'S')
 		pick_f_s(ptr, data, param);
-	else if (*ptr == 'p')
-		void_param(param);
+//	else if (*ptr == 'p')
+//		void_param(param);
 	else if (*ptr == 'd' || *ptr == 'i' || *ptr == 'D')
 		int_param(param);
 	else if (*ptr == 'o' || *ptr == 'O')
@@ -86,7 +84,7 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 		pick_f_w(data, param);
 	else if (*ptr == 'c' || *ptr == 'C')
 		pick_f_c(param, data);
-/*	else if (*ptr == '%')
-		pick_f_%(param, data);*/
+	else if (*ptr == '%')
+		pick_f_percent(param, data);
 	return (0);
 }

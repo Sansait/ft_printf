@@ -17,8 +17,11 @@ int	f_precision(t_data *data)
 
 int	f_zero(t_data *data)
 {
-	if (data->zero > 0)
-		while(--data->zero >= 0)
+	int	zero;
+
+	zero = (int)(data->width - (data->len + data->precision));
+	if (zero > 0)
+		while(--zero >= 0)
 		{
 			ft_putchar('0');
 			++data->ret_val;

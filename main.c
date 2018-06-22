@@ -16,13 +16,14 @@
 #include <wchar.h>
 #include <locale.h>
 
-int	printuntil(const char *str, const char *ptr)
+int	printuntil(const char *str, const char *ptr, t_data *data)
 {
 	int i;
 
 	i = 0;
 	while (str + i != ptr && str[i] != '\0')
 		i++;
+	data->ret_val += i;
 	write(1, str, i);
 	return (i);
 }
@@ -50,12 +51,12 @@ int	 ft_printf(const char *str, ...)
 	t_data		data;
 
 	va_start(pointerlst, str);
-	if (check(str) == -1)
-		return (-1);
+//	if (check(str) == -1)
+//		return (-1);
 	while ((ptr = ft_strchr(str, '%')) != NULL)
 	{
 		init_struct(&data);
-		data.ret_val += printuntil(str, ptr);
+		printuntil(str, ptr, &data);
 		ptr += 1;
 		while ((i = path(ptr, pointerlst, &data)) > 0)
 		{
@@ -63,21 +64,20 @@ int	 ft_printf(const char *str, ...)
 		}
 		str = ptr + 1;
 	}
-	ft_printuntil(str, ptr);
+	printuntil(str, ptr, &data);
 	va_end(pointerlst);
 	return (data.ret_val);
 }
 
 int main(void)
-{
-	//il est probable que la precision ne soit pas réinitialisée à 0 quand on passe a une convertion suivante
-	//x ne fonctionne pas avec 0
-//	int		nb;
-//	unsigned int	u_nb;
-	char		c;
-//	wchar_t		test;
+{//fix two commented codes@
+	int	i;
+	int	ret;
 
-	c = 'c';
-	ft_printf("salut c'est nous -> %-2c\n", c);
+	i = -1;
+
+//	printf("Vret -> %d\n", printf("vous ->  %-014x\n", 789));
+//	printf("Vret -> %d\n", ft_printf("nous ->  %-014x\n", 789));
+	ft_printf("%%");
 	return (0);
 }

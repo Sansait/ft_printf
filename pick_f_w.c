@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-void	write_quadruple(wchar_t unicode)
+void	write_quadruple(wchar_t unicode, t_data *data)
 {
 	char *str;
 
@@ -16,9 +16,10 @@ void	write_quadruple(wchar_t unicode)
 	write(1, &str[2], 1);
 	write(1, &str[3], 1);
 	ft_strdel(&str);
+	data->ret_val = -1;
 }
 
-void	write_triple(wchar_t unicode)
+void	write_triple(wchar_t unicode, t_data *data)
 {
 	char *str;
 
@@ -31,9 +32,10 @@ void	write_triple(wchar_t unicode)
 	write(1, &str[1], 1);
 	write(1, &str[2], 1);
 	ft_strdel(&str);
+	data->ret_val += 4;
 }
 
-void	write_double(wchar_t unicode)
+void	write_double(wchar_t unicode, t_data *data)
 {
 	char *str;
 
@@ -44,14 +46,16 @@ void	write_double(wchar_t unicode)
 	write(1, &str[0], 1);
 	write(1, &str[1], 1);
 	ft_strdel(&str);
+	data->ret_val += 3;
 }
 
-void	write_single(wchar_t unicode)
+void	write_single(wchar_t unicode, t_data *data)
 {
 	char str;
 
 	str = unicode;
 	write(1, &str, 1);
+	data->ret_val += 2;
 }
 
 int	pick_f_w(t_data *data, va_list param)
@@ -60,15 +64,13 @@ int	pick_f_w(t_data *data, va_list param)
 	
 	unicode = va_arg(param, wchar_t);
 	if (unicode < 129)
-		write_single(unicode);
+		write_single(unicode, data);
 	else if (unicode < 2049)
-		write_double(unicode);
-	else if (unicode < 65537)
-	{
-		write_triple(unicode);
-	}
+		write_double(unicode, data);
+	else if (unicode < 55295)
+		write_triple(unicode, data);
 	else
-		write_quadruple(unicode);
-	++data->ret_val;
+		data->ret_val = -1;
+	//	write_quadruple(unicode, data);
 	return (0);
 }

@@ -18,10 +18,8 @@ SRC = main.c to_base.c string.c int.c length.c flags.c path.c precision.c pick_f
       ft_putnbr.c \
       ft_strnew.c \
       ft_atoi.c \
-      ft_printuntil.c \
-      check.c \
-      path_check.c \
-      pick_f_w.c
+      pick_f_w.c \
+      pick_f_percent.c 
 
 OBJ = $(SRC:.c=.o) 
 

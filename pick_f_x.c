@@ -20,8 +20,7 @@ int	pick_f_x_two(char *result, t_data *data, const char *ptr)
 		print_str(result, data);
 	}
 	else if (data->flags[ZERO])
-	{//ne fonctionne pas avec 012.14x 
-	//mauvaise valeur de retour avec une précision
+	{
 		f_width(data);
 		f_x_sharp(data, ptr);
 		print_str(result, data);
@@ -48,12 +47,14 @@ int	pick_f_x(va_list param, t_data *data, const char *ptr)
 	result = (*ptr == 'x') ? to_base(va_arg(param, int), BASE_H) : to_base(va_arg(param, int), BASE_HC);
 	data->len = ft_strlen(result);
 	data->precision = (data->precision > data->len) ? data->precision - (data->len): 0;
+	printf("data->precisino -> %d\n", data->precision);
 	data->len = (data->flags[SHARP]) ? ft_strlen(result) + 2 : ft_strlen(result);
 	if (data->flags[MINUS])
 	{//OP
+		printf("MINUS\n");
 		f_x_sharp(data, ptr);
 		f_precision(data);
-		ft_putstr(result);
+		print_str(result, data);
 		f_width(data);
 	}
 	else if (data->precision > 0 && data->width > 0)

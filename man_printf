@@ -4,6 +4,7 @@
 -- LES CONVERTIONS --
 -- LES FLAGS signes --
 -- LES FLAGS lettres sataniques --
+-- VALEURS DE RETOUR unicode --
 
 -- TIPS --
 Une fonction par convertion
@@ -88,3 +89,9 @@ z                 size_t         size_t                (see note)
 
 z -> pour d ou i indique que l'argument est de type non signé en taille
 	voir man pour le bonus n
+
+-- VALEURS DE RETOUR unicode --
+de 0 a 127 compris -> 2
+de 128 a 2047 compris -> 3
+de 2048 a 55295 compris -> 4
+au-delà -> -1
