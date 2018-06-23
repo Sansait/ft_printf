@@ -76,8 +76,8 @@ int main(void)
 
 	i = -1;
 
-//	printf("Vret -> %d\n", printf("vous ->  %-014x\n", 789));
-//	printf("Vret -> %d\n", ft_printf("nous ->  %-014x\n", 789));
-	ft_printf("%%");
+	printf("Vret -> %d\n", printf("vous ->  %-020.14u\n", 789));
+	printf("Vret -> %d\n", ft_printf("nous ->  %-020.14u\n", 789));
+//	ft_printf("%%");
 	return (0);
 }

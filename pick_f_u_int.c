@@ -33,6 +33,8 @@ int	pick_f_u(va_list param, t_data *data)
 	data->precision = (data->precision > data->len) ? data->precision - data->len : 0;
 	if (data->flags[MINUS])
 	{	
+		printf("MINUS\n");
+		printf("precision -> %d\n", data->precision);
 		f_precision(data);
 		ft_put_u(nb, data);
 		f_width(data);

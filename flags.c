@@ -21,7 +21,7 @@ int		flag_sharp(t_data *data)
 int		flag_zero(t_data *data, const char *ptr)
 {
 	data->flags[ZERO] = 1;
-	data->precision = ft_atoi((char *)ptr);
+	data->width = ft_atoi((char *)ptr);
 	return (1);
 }
 
