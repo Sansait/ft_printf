@@ -7,6 +7,7 @@ int	f_x_sharp(t_data *data, const char *ptr)
 		print_str("0x", data);
 	else if (data->flags[SHARP] && *ptr == 'X')
 		print_str("0X", data);
+	data->len = (*ptr == 'x' || *ptr == 'X') ? data->len + 2 : ++data->len;
 	return (0);
 }
 
@@ -48,7 +49,6 @@ int	pick_f_x(va_list param, t_data *data, const char *ptr)
 	if ((data->len = ft_strlen(result)) == 1 && *result == '0')
 		return (print_str("0", data));
 	data->precision = (data->precision > data->len) ? data->precision - (data->len) : 0;
-	data->len = (data->flags[SHARP]) ? ft_strlen(result) + 2 : ft_strlen(result);
 	if (data->flags[MINUS])
 	{
 		f_x_sharp(data, ptr);

@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/23 18:35:14 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/23 18:45:46 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,7 @@ int main(void)
 
 	i = -1;
 
-	printf("Vret -> %d\n", printf("moulitest %x jdfhjsdfh\n", 0));
-	printf("Nret -> %d\n", ft_printf("moulitest %x\n dskjfhd", 0));
-//	ft_printf("%%");
+	printf("Vret -> %d\n", printf("vous %#.6x\n", 987));
+	printf("Nret -> %d\n", printf("nous %#.6x\n", 987));
 	return (0);
 }
