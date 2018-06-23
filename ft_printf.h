@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 15:21:52 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/20 16:56:07 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/23 17:06:02 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int	length_j(t_data *data);
 int	length_z(t_data *data);
 int	width(char *ptr, t_data *data);
 int	precision(const char *ptr, t_data *data);
-void	print_str(const char *str, t_data *data);
+int	print_str(const char *str, t_data *data);
 void	print_char(char c, t_data *data);
 int	width_min(const char *ptr, t_data *data);
-char	*to_base(int nb, char *base);
+char	*to_base(unsigned int nb, char *base);
 int	pick_f_u(va_list param, t_data *data);
 int	pick_f_x(va_list param, t_data *data, const char *ptr);
 int	pick_f_c(va_list param, t_data *data);

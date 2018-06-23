@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:13:59 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/20 16:46:35 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/23 17:05:04 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,14 @@ int		string_param(t_data *data, va_list param)
 	return (0);
 }
 
-void	print_str(const char *str, t_data *data)
+int		print_str(const char *str, t_data *data)
 {//un putstr qui incrémente notre valeur de retour
 	while (*str)
 	{
 		print_char(*str, data);
 		++str;
 	}
+	return (data->ret_val);
 }
 
 void	print_char(char c, t_data *data)

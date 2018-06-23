@@ -14,12 +14,12 @@ char	*ft_swap_chars(char *str)
 	return (str);
 }
 
-char	*to_base(int nb, char *base)
+char	*to_base(unsigned int nb, char *base)
 {
-	int			i;
-	int			prod;
-	int			tmp;
-	char		*result;
+	int				i;
+	long long int	prod;
+	long long int	tmp;
+	char			*result;
 
 	if (!base)
 		return (NULL);

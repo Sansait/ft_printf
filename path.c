@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:47 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/19 17:05:21 by jlehideu         ###   ########.fr       */
+/*   Updated: 2018/06/23 16:09:34 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ int		path(char *ptr, va_list param, t_data *data)
 int		width(char *ptr, t_data *data)
 {
 	if (*ptr == '.')
-	{
-		printf("OIUKJHK*ptr -> %c\n", *ptr);
 		return (precision(ptr + 1, data) + 1);
-	}
 	else if (*ptr > '0' && *ptr <= '9')
 		return (width_min(ptr, data));
 	return (0);

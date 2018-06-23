@@ -21,8 +21,8 @@ int	pick_f_x_two(char *result, t_data *data, const char *ptr)
 	}
 	else if (data->flags[ZERO])
 	{
-		f_width(data);
 		f_x_sharp(data, ptr);
+		f_zero(data);
 		print_str(result, data);
 	}
 	else if (data->width > 0)
@@ -45,20 +45,19 @@ int	pick_f_x(va_list param, t_data *data, const char *ptr)
 	char	*result;
 
 	result = (*ptr == 'x') ? to_base(va_arg(param, int), BASE_H) : to_base(va_arg(param, int), BASE_HC);
-	data->len = ft_strlen(result);
-	data->precision = (data->precision > data->len) ? data->precision - (data->len): 0;
-	printf("data->precisino -> %d\n", data->precision);
+	if ((data->len = ft_strlen(result)) == 1 && *result == '0')
+		return (print_str("0", data));
+	data->precision = (data->precision > data->len) ? data->precision - (data->len) : 0;
 	data->len = (data->flags[SHARP]) ? ft_strlen(result) + 2 : ft_strlen(result);
 	if (data->flags[MINUS])
-	{//OP
-		printf("MINUS\n");
+	{
 		f_x_sharp(data, ptr);
 		f_precision(data);
 		print_str(result, data);
 		f_width(data);
 	}
 	else if (data->precision > 0 && data->width > 0)
-		{//OP
+	{
 		f_width(data);
 		f_x_sharp(data, ptr);
 		f_precision(data);

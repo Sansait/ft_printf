@@ -6,7 +6,7 @@
 /*   By: sklepper <sklepper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:53:50 by sklepper          #+#    #+#             */
-/*   Updated: 2018/06/20 17:07:56 by sklepper         ###   ########.fr       */
+/*   Updated: 2018/06/23 18:35:14 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	printuntil(const char *str, const char *ptr, t_data *data)
 	int i;
 
 	i = 0;
-	while (str + i != ptr && str[i] != '\0')
+	while (str[i] && str + i != ptr && str[i] != '\0')
 		i++;
 	data->ret_val += i;
 	write(1, str, i);
@@ -53,12 +53,12 @@ int	 ft_printf(const char *str, ...)
 	va_start(pointerlst, str);
 //	if (check(str) == -1)
 //		return (-1);
+	init_struct(&data);
 	while ((ptr = ft_strchr(str, '%')) != NULL)
 	{
 		init_struct(&data);
-		printuntil(str, ptr, &data);
 		ptr += 1;
-		while ((i = path(ptr, pointerlst, &data)) > 0)
+		while (ptr && (i = path(ptr, pointerlst, &data)) > 0)
 		{
 			ptr += i;
 		}
@@ -76,8 +76,8 @@ int main(void)
 
 	i = -1;
 
-	printf("Vret -> %d\n", printf("vous ->  %-020.14u\n", 789));
-	printf("Vret -> %d\n", ft_printf("nous ->  %-020.14u\n", 789));
+	printf("Vret -> %d\n", printf("moulitest %x jdfhjsdfh\n", 0));
+	printf("Nret -> %d\n", ft_printf("moulitest %x\n dskjfhd", 0));
 //	ft_printf("%%");
 	return (0);
 }
