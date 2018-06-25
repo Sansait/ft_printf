@@ -23,8 +23,7 @@ int	printuntil(const char *str, const char *ptr, t_data *data)
 	i = 0;
 	while (str[i] && str + i != ptr && str[i] != '\0')
 		i++;
-	data->ret_val += i;
-	write(1, str, i);
+	print_str((char *)str, data);
 	return (i);
 }
 
@@ -54,6 +53,7 @@ int	 ft_printf(const char *str, ...)
 //	if (check(str) == -1)
 //		return (-1);
 	init_struct(&data);
+	data.idx = -1;
 	while ((ptr = ft_strchr(str, '%')) != NULL)
 	{
 		init_struct(&data);
@@ -64,11 +64,13 @@ int	 ft_printf(const char *str, ...)
 		}
 		str = ptr + 1;
 	}
+//	fill_buff_s(&data, -1, "");
 	printuntil(str, ptr, &data);
+	write(1, &data.buff, ++data.idx);
 	va_end(pointerlst);
 	return (data.ret_val);
 }
-
+/*
 int main(void)
 {//fix two commented codes@
 	int	i;
@@ -76,7 +78,9 @@ int main(void)
 
 	i = -1;
 
-	printf("Vret -> %d\n", printf("vous %#.6x\n", 987));
-	printf("Nret -> %d\n", printf("nous %#.6x\n", 987));
+	printf("Vret -> %d\n", printf("%x", 42));
+	printf("Nret -> %d\n", ft_printf("%x", 42));
+//	printf("Vret -> %d\n", printf("vous %#.6x\n", 987));
+//	printf("Nret -> %d\n", printf("nous %#.6x\n", 987));
 	return (0);
-}
+}*/

@@ -8,10 +8,7 @@ int	f_precision(t_data *data)
 	precision = data->precision;
 	if (precision > 0)
 		while (--precision >= 0)
-		{
-			ft_putchar('0');
-			++data->ret_val;
-		}
+			fill_buff_c(data, '0');
 	return (0);
 }
 
@@ -22,10 +19,7 @@ int	f_zero(t_data *data)
 	zero = (int)(data->width - (data->len + data->precision));
 	if (zero > 0)
 		while(--zero >= 0)
-		{
-			ft_putchar('0');
-			++data->ret_val;
-		}
+			fill_buff_c(data, '0');
 	return (0);
 }
 
@@ -36,9 +30,6 @@ int	f_width(t_data *data)
 	width = (int)(data->width - (data->len + data->precision));
 	if (width > 0)
 		while (--width >= 0)
-		{
-			ft_putchar(' ');
-			++data->ret_val;
-		}
+			fill_buff_c(data, ' ');
 	return (0);
 }

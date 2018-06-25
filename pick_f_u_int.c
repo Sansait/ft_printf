@@ -5,8 +5,7 @@ void	ft_put_u(unsigned int nb, t_data *data)
 {
 	if (nb / 10)
 		ft_put_u(nb / 10, data);
-	ft_putchar(nb % 10 + 48);
-	data->ret_val++;
+	fill_buff_c(data, nb % 10 + 48);
 }
 
 size_t	len_u(unsigned int nb)

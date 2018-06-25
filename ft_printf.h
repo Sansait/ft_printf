@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include "libft/includes/libft.h"
+# include <unistd.h>
 
 # define SHARP 0
 # define ZERO 1
@@ -30,8 +31,10 @@
 # define BASE_HC "0123456789ABCDEF"
 # define BASE_H "0123456789abcdef"
 
+# define BUFF_SIZE 3000
 struct s_data
 {
+	char		buff[BUFF_SIZE];
 	int		flags[5];
 	int		length[5];
 	int		precision;
@@ -39,6 +42,7 @@ struct s_data
 	int		zero;
 	int		ret_val;
 	int		len;
+	int		idx;
 };
 
 typedef struct s_data	t_data;
@@ -65,7 +69,7 @@ int	length_j(t_data *data);
 int	length_z(t_data *data);
 int	width(char *ptr, t_data *data);
 int	precision(const char *ptr, t_data *data);
-int	print_str(const char *str, t_data *data);
+int	print_str(char *str, t_data *data);
 void	print_char(char c, t_data *data);
 int	width_min(const char *ptr, t_data *data);
 char	*to_base(unsigned int nb, char *base);
@@ -86,6 +90,8 @@ int	check_s_c_p(t_data *data);
 int	check_di(t_data *data);
 int	check_ox(t_data *data);
 int	check_u(t_data *data);
+int	fill_buff_s(t_data *data, int i, char *str);
+int	fill_buff_c(t_data *data, char c);
 
 
 #endif
