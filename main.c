@@ -78,8 +78,8 @@ int main(void)
 
 	i = -1;
 
-	printf("Vret -> %d\n", printf("%x", 42));
-	printf("Nret -> %d\n", ft_printf("%x", 42));
+	printf("Vret -> %d\n", printf("%x \n", 0));
+	printf("Nret -> %d\n", ft_printf("%x \n", 0));
 //	printf("Vret -> %d\n", printf("vous %#.6x\n", 987));
 //	printf("Nret -> %d\n", printf("nous %#.6x\n", 987));
 	return (0);

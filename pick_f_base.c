@@ -53,7 +53,7 @@ char	*determine_xo_call(const char *ptr, va_list param)
 	return (result);
 }
 
-int	pick_f_x(va_list param, t_data *data, const char *ptr)
+int	pick_f_base(va_list param, t_data *data, const char *ptr)
 {
 	//comportement indéfini precision et largeur = int max
 	char	*result;

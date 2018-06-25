@@ -75,11 +75,11 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 	else if (*ptr == 'd' || *ptr == 'i' || *ptr == 'D')
 		int_param(param);
 	else if (*ptr == 'o' || *ptr == 'O')
-		unsignedint_param_oct(param);
+		pick_f_base(param, data, ptr);
 	else if (*ptr == 'u' || *ptr == 'U')
 		pick_f_u(param, data);
 	else if (*ptr == 'x' || *ptr == 'X')
-		pick_f_x(param, data, ptr);
+		pick_f_base(param, data, ptr);
 	else if ((*ptr == 'c' || *ptr == 'C') && data->length[L] == 1)
 		pick_f_w(data, param);
 	else if (*ptr == 'c' || *ptr == 'C')

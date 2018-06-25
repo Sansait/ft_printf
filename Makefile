@@ -15,7 +15,7 @@ NAME = libftprintf.a
 
 NAMEN = ft_printf
 
-SRC = main.c to_base.c string.c int.c length.c flags.c path.c precision.c pick_f_u_int.c pick_f_x.c digits_precision.c pick_f_c.c ft_itoa.c ft_memset.c ft_putstr.c ft_strchr.c ft_strcmp.c ft_strlen.c ft_putstr_fd.c \
+SRC = main.c to_base.c string.c int.c length.c flags.c path.c precision.c pick_f_u_int.c pick_f_base.c digits_precision.c pick_f_c.c ft_itoa.c ft_memset.c ft_putstr.c ft_strchr.c ft_strcmp.c ft_strlen.c ft_putstr_fd.c \
       ft_putchar.c \
       ft_putnbr.c \
       ft_strnew.c \
