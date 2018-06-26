@@ -70,8 +70,8 @@ int		conversion(const char *ptr, va_list param, t_data *data)
 {
 	if (*ptr == 's' || *ptr == 'S')
 		pick_f_s(ptr, data, param);
-//	else if (*ptr == 'p')
-//		void_param(param);
+	else if (*ptr == 'p')
+		void_param(param, data);
 	else if (*ptr == 'd' || *ptr == 'i' || *ptr == 'D')
 		int_param(param);
 	else if (*ptr == 'o' || *ptr == 'O')

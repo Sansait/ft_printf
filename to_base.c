@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "ft_printf.h"
 
-char	*ft_swap_chars(char *str)
+static char	*ft_swap_chars(char *str)
 {
 	int	i;
 	int	j;

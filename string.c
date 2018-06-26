@@ -60,6 +60,7 @@ int	fill_buff_c(t_data *data, char c)
 int	pick_f_s(const char *ptr, t_data *data, va_list param)
 {
 	char *str;
+
 	if (*ptr == 'S' || (*ptr == 's' && data->flags[L] == 1))
 	{
 		str = va_arg(param, char*);

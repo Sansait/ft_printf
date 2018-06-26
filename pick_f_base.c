@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "ft_printf.h"
 
-int	f_x_sharp(t_data *data, const char *ptr)
+static int	f_x_sharp(t_data *data, const char *ptr)
 {
 	if (data->flags[SHARP] > 0 && *ptr == 'x')
 		print_str("0x", data);
@@ -50,6 +50,8 @@ char	*determine_xo_call(const char *ptr, va_list param)
 		result = to_base(va_arg(param, int), BASE_HC);
 	else if (*ptr == 'o')
 		result = to_base(va_arg(param, int), BASE_O);
+	else
+		return (NULL);
 	return (result);
 }
 
@@ -58,7 +60,8 @@ int	pick_f_base(va_list param, t_data *data, const char *ptr)
 	//comportement indéfini precision et largeur = int max
 	char	*result;
 
-	result = determine_xo_call(ptr, param);
+	if (!(result = determine_xo_call(ptr, param)))
+		return (-1);
 	if ((data->len = ft_strlen(result)) == 1 && *result == '0')
 		return (print_str("0", data));
 	data->len = (data->flags[SHARP] && (*ptr == 'x' || *ptr == 'X')) ? data->len + 2 : data->len;

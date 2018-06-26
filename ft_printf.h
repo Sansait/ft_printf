@@ -32,6 +32,7 @@
 # define BASE_H "0123456789abcdef"
 
 # define BUFF_SIZE 3000
+
 struct s_data
 {
 	char		buff[BUFF_SIZE];
@@ -51,7 +52,7 @@ int	path(char *ptr, va_list param, t_data *data);
 int	conversion(const char *ptr, va_list param, t_data *data);
 int	int_param(va_list param);
 int	string_param(t_data *data, va_list param);
-int	void_param(va_list param);
+int	void_param(va_list param, t_data *data);
 int	unsignedint_param_oct(va_list param);
 int	unsignedint_param(va_list param);
 int	unsignedint_param_hex(const char *ptr, va_list param);
